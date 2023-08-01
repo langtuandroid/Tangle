@@ -1,14 +1,20 @@
+using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Tangle.Line
 {
     public class LineRendererController : MonoBehaviour
     {
-        LineRenderer _lineRenderer;
+        [SerializeField] LineRenderer _lineRenderer;
+
+        void Awake()
+        {
+            GetReference();
+        }
 
         void Start()
         {
-            _lineRenderer = GetComponent<LineRenderer>();
             UpdateLineRendererPositions();
         }
 
@@ -23,7 +29,7 @@ namespace Tangle.Line
         {
             Debug.Log("Pointer test");
         }
-        
+        [Button]
         void UpdateLineRendererPositions()
         {
             // Parent objenin çocuk sayısını al
@@ -42,6 +48,17 @@ namespace Tangle.Line
             // Line Renderer pozisyonlarını güncelle
             _lineRenderer.positionCount = childCount;
             _lineRenderer.SetPositions(positions);
+        }
+
+        void OnValidate()
+        {
+            GetReference();
+        }
+
+        void GetReference()
+        {
+            if (_lineRenderer == null)
+                _lineRenderer = GetComponent<LineRenderer>();
         }
     }    
 }

@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Tangle.Level;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -82,6 +83,7 @@ namespace Tangle.Line
             if (triggerCounter >= triggerThreshold)
             {
                 Debug.Log(other.gameObject.name);
+                LevelManager.Instance.IncreaseRedLineCount();
                 _lineRenderer.startColor = Color.red; // Line Renderer'ın başlangıç rengini kırmızı yap
                 _lineRenderer.endColor = Color.red;
                 //  triggerCounter = 0;
@@ -93,6 +95,7 @@ namespace Tangle.Line
             triggerCounter--;
             if (triggerCounter < triggerThreshold)
             {
+                LevelManager.Instance.DecreaseRedLineCount();
                 _lineRenderer.startColor = Color.white; // Line Renderer'ın başlangıç rengini kırmızı yap
                 _lineRenderer.endColor = Color.white;
             }

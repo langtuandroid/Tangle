@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 namespace Tangle.ClickManager
 {
-    public class ClickManager : SingletonMonoDestroy<ClickManager>
+    public sealed class ClickManager : SingletonMonoDestroy<ClickManager>
     {
         LineDrawerTest _firstLineTrigger, _secondLineTrigger;
         public bool CanClickAble { get; set; }

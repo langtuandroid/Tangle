@@ -7,7 +7,6 @@
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +17,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/61a83ee4e8ca4c71a48aab1ac09e9b3e3c00/b8/f6be11b1/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bf6080dbf0564cf1b405dfd6e0dac725940e00/e4/ea69385c/Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineSegmentController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineTriggerTest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -117,10 +117,10 @@
           <line>25</line>
           <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Click\ClickManager.cs" initialLine="17" containingFunctionPresentation="Method 'SetDotObject'">
             <startOffsets>
-              <option value="642" />
+              <option value="649" />
             </startOffsets>
             <endOffsets>
-              <option value="643" />
+              <option value="650" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
@@ -130,10 +130,10 @@
           <line>49</line>
           <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Click\ClickManager.cs" initialLine="47" containingFunctionPresentation="Method 'ResetClickedObjects'">
             <startOffsets>
-              <option value="1349" />
+              <option value="1356" />
             </startOffsets>
             <endOffsets>
-              <option value="1350" />
+              <option value="1357" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />

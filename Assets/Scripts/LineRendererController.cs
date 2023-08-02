@@ -1,64 +1,50 @@
 using System;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Tangle.Line
 {
     public class LineRendererController : MonoBehaviour
     {
-        [SerializeField] LineRenderer _lineRenderer;
-
-        void Awake()
-        {
-            GetReference();
-        }
+        private LineRenderer lineRenderer;
+        private EdgeCollider2D edgeCollider;
 
         void Start()
         {
+            lineRenderer = GetComponent<LineRenderer>();
+            edgeCollider = gameObject.GetComponent<EdgeCollider2D>();
             UpdateLineRendererPositions();
         }
 
-        // Bu fonksiyon, çocuk objelerin eklendiği, silindiği veya pozisyonlarının değiştirildiği durumda çağrılır
-        void OnTransformChildrenChanged()
+        void Update()
+        {
+            UpdateLineRendererPositions();
+        }
+
+        void OnTriggerEnter2D(Collider2D other)
         {
             Debug.Log("Test");
-            UpdateLineRendererPositions();
         }
 
-        public void PointerTest()
-        {
-            Debug.Log("Pointer test");
-        }
-        [Button]
         void UpdateLineRendererPositions()
         {
-            // Parent objenin çocuk sayısını al
             int childCount = transform.childCount;
+            Vector3[] positions = new Vector3[childCount + 1];
+            Vector2[] colliderPoints = new Vector2[childCount + 1];
 
-            // Line Renderer pozisyonları için yeni bir Vector3 dizisi oluştur
-            Vector3[] positions = new Vector3[childCount];
-
-            // Her çocuğun pozisyonunu line renderer pozisyonlarına ekle
             for (int i = 0; i < childCount; i++)
             {
                 Transform child = transform.GetChild(i);
                 positions[i] = child.position;
+                colliderPoints[i] = child.localPosition; // Çocuk objelerin yerel pozisyonunu Edge Collider'a atayalım
             }
 
-            // Line Renderer pozisyonlarını güncelle
-            _lineRenderer.positionCount = childCount;
-            _lineRenderer.SetPositions(positions);
-        }
+            positions[childCount] = transform.GetChild(0).position;
+            lineRenderer.positionCount = childCount + 1;
+            lineRenderer.SetPositions(positions);
 
-        void OnValidate()
-        {
-            GetReference();
-        }
-
-        void GetReference()
-        {
-            if (_lineRenderer == null)
-                _lineRenderer = GetComponent<LineRenderer>();
+            // Edge Collider'ın başlangıç ve bitiş noktalarını çocuk objelerin yerel pozisyonları ile güncelleyelim
+            colliderPoints[childCount] = transform.GetChild(0).localPosition;
+            edgeCollider.points = colliderPoints;
         }
     }    
 }

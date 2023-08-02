@@ -1,3 +1,5 @@
+using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Tangle.Line
@@ -18,7 +20,7 @@ namespace Tangle.Line
 
         void Update()
         {
-            //  UpdateLine();
+            UpdateLine();
         }
 
         public void UpdateLine()
@@ -79,7 +81,17 @@ namespace Tangle.Line
                 Debug.Log(other.gameObject.name);
                 _lineRenderer.startColor = Color.red; // Line Renderer'ın başlangıç rengini kırmızı yap
                 _lineRenderer.endColor = Color.red;
-                triggerCounter = 0;
+                //  triggerCounter = 0;
+            }
+        }
+
+        void OnTriggerExit2D(Collider2D other)
+        {
+            triggerCounter--;
+            if (triggerCounter < triggerThreshold)
+            {
+                _lineRenderer.startColor = Color.white; // Line Renderer'ın başlangıç rengini kırmızı yap
+                _lineRenderer.endColor = Color.white;
             }
         }
 
@@ -88,8 +100,24 @@ namespace Tangle.Line
             ClickManager.ClickManager.Instance.SetDotObject(this);
         }
 
-        public void StartMovement(Transform transform)
+        public void CloseLine()
         {
+            _lineRenderer.enabled = false;
+            _polygonCollider.enabled = false;
+        }
+
+        void OpenLine()
+        {
+            _lineRenderer.enabled = true;
+            _polygonCollider.enabled = true;
+        }
+
+        public void StartMovement(Transform newTransform)
+        {
+            var sequence = DOTween.Sequence();
+            sequence.AppendCallback(CloseLine);
+            sequence.Append(transform.DOMove(newTransform.position, 1f));
+            sequence.AppendCallback(OpenLine);
         }
     }
 }

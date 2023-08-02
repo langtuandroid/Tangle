@@ -36,6 +36,9 @@ namespace Tangle.ClickManager
 
         void SwapClickedObjectPositions()
         {
+            _firstLineTrigger.StartMovement(_secondLineTrigger.gameObject.transform);
+            _secondLineTrigger.StartMovement(_firstLineTrigger.gameObject.transform);
+            ResetClickedObjects();
             Debug.Log("Swap started");
         }
     }

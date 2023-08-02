@@ -6,7 +6,8 @@ namespace Tangle.Line
     {
         LineRenderer _lineRenderer;
         PolygonCollider2D _polygonCollider;
-        public float offset = 0.5f;
+        public int triggerThreshold = 3; // Tetikleme için üst üste gelme eşiği
+        int triggerCounter = 0; // Tetikleme için sayaç
 
         void Start()
         {
@@ -25,7 +26,6 @@ namespace Tangle.Line
             DrawToNext();
             AddPolygonCollider();
         }
-
 
         void DrawToNext()
         {
@@ -72,7 +72,15 @@ namespace Tangle.Line
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log(other.gameObject.name);
+            triggerCounter++;
+
+            if (triggerCounter >= triggerThreshold)
+            {
+                Debug.Log(other.gameObject.name);
+                _lineRenderer.startColor = Color.red; // Line Renderer'ın başlangıç rengini kırmızı yap
+                _lineRenderer.endColor = Color.red;
+                triggerCounter = 0;
+            }
         }
     }
 }

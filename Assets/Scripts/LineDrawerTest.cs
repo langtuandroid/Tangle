@@ -1,62 +1,78 @@
-using System;
 using UnityEngine;
 
-
-public class LineDrawer : MonoBehaviour
+namespace Tangle.Line
 {
-    private LineRenderer lineRenderer;
-    private EdgeCollider2D edgeCollider;
-
-    void Start()
+    public class LineDrawerTest : MonoBehaviour
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        edgeCollider = GetComponent<EdgeCollider2D>();
-        DrawToNext();
-        AddEdgeCollider();
-    }
+        LineRenderer _lineRenderer;
+        PolygonCollider2D _polygonCollider;
+        public float offset = 0.5f;
 
-    void Update()
-    {
-        DrawToNext();
-        AddEdgeCollider();
-    }
-    
-
-    void DrawToNext()
-    {
-        int currentIndex = transform.GetSiblingIndex();
-        int nextIndex = (currentIndex + 1) % transform.parent.childCount;
-
-        Transform nextChild = transform.parent.GetChild(nextIndex);
-        Vector3[] positions = { transform.position, nextChild.position };
-
-        lineRenderer.positionCount = 2;
-        lineRenderer.SetPositions(positions);
-
-        if (nextIndex == 0) // Son obje ise, birinci obje ile çizgi çiz
+        void Start()
         {
-            Transform firstChild = transform.parent.GetChild(0);
-            Vector3[] positions2 = { transform.position, firstChild.position };
-
-            lineRenderer.positionCount = 2;
-            lineRenderer.SetPositions(positions2);
+            _lineRenderer = GetComponent<LineRenderer>();
+            _polygonCollider = GetComponent<PolygonCollider2D>();
+            UpdateLine();
         }
-    }
 
-    void AddEdgeCollider()
-    {
-        Vector2[] colliderPoints = new Vector2[lineRenderer.positionCount];
-        for (int i = 0; i < lineRenderer.positionCount; i++)
+        void Update()
         {
-            colliderPoints[i] = lineRenderer.transform.InverseTransformPoint(lineRenderer.GetPosition(i));
+            //  UpdateLine();
         }
-        edgeCollider.points = colliderPoints;
-    }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log(gameObject.name);
+        public void UpdateLine()
+        {
+            DrawToNext();
+            AddPolygonCollider();
+        }
+
+
+        void DrawToNext()
+        {
+            var currentIndex = transform.GetSiblingIndex();
+            var nextIndex = (currentIndex + 1) % transform.parent.childCount;
+
+            var nextChild = transform.parent.GetChild(nextIndex);
+            Vector3[] positions = { transform.position, nextChild.position };
+
+            _lineRenderer.positionCount = 2;
+            _lineRenderer.SetPositions(positions);
+
+            if (nextIndex == 0) // Son obje ise, birinci obje ile çizgi çiz
+            {
+                var firstChild = transform.parent.GetChild(0);
+                Vector3[] positions2 = { transform.position, firstChild.position };
+
+                _lineRenderer.positionCount = 2;
+                _lineRenderer.SetPositions(positions2);
+            }
+        }
+
+        void AddPolygonCollider()
+        {
+            var startPoint = _lineRenderer.GetPosition(0);
+            var endPoint = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
+
+            var direction = endPoint - startPoint;
+            var perpendicular = new Vector3(-direction.y, direction.x, 0f).normalized;
+
+            var topLeft = startPoint + perpendicular * (_lineRenderer.startWidth / 2f);
+            var bottomLeft = startPoint - perpendicular * (_lineRenderer.startWidth / 2f);
+            var topRight = endPoint + perpendicular * (_lineRenderer.endWidth / 2f);
+            var bottomRight = endPoint - perpendicular * (_lineRenderer.endWidth / 2f);
+
+            var colliderPoints = new Vector2[4];
+            colliderPoints[0] = _lineRenderer.transform.InverseTransformPoint(topLeft);
+            colliderPoints[1] = _lineRenderer.transform.InverseTransformPoint(bottomLeft);
+            colliderPoints[2] = _lineRenderer.transform.InverseTransformPoint(bottomRight);
+            colliderPoints[3] = _lineRenderer.transform.InverseTransformPoint(topRight);
+
+            _polygonCollider.points = colliderPoints;
+        }
+
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log(other.gameObject.name);
+        }
     }
 }
-
-

@@ -82,5 +82,14 @@ namespace Tangle.Line
                 triggerCounter = 0;
             }
         }
+
+        public void ClickEvent()
+        {
+            ClickManager.ClickManager.Instance.SetDotObject(this);
+        }
+
+        public void StartMovement(Transform transform)
+        {
+        }
     }
 }

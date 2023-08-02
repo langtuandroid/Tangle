@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7977529600840621127}
   - component: {fileID: 2804063659578511731}
   - component: {fileID: 5796369715819476028}
+  - component: {fileID: 7024762897096485080}
   m_Layer: 6
   m_Name: Dot
   m_TagString: Untagged
@@ -96,9 +97,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Tangle.Line.LineRendererController, Assembly-CSharp
-          m_MethodName: PointerTest
+        - m_Target: {fileID: 7024762897096485080}
+          m_TargetAssemblyTypeName: Tangle.Line.LineDrawerTest, Assembly-CSharp
+          m_MethodName: ClickEvent
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -289,3 +290,16 @@ PolygonCollider2D:
       - {x: 101.73631, y: -1059.5297}
       - {x: 164.61278, y: -866.0157}
   m_UseDelaunayMesh: 0
+--- !u!114 &7024762897096485080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6101772273996773166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d6e92d426b38a42a52fa1f13cab03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerThreshold: 3

@@ -1,20 +1,36 @@
+using System;
 using RoddGames.Abstracts.Patterns;
 using Tangle.Line;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace Tangle.ClickManager
 {
     public class ClickManager : SingletonMonoDestroy<ClickManager>
     {
         LineDrawerTest _firstLineTrigger, _secondLineTrigger;
+        public bool CanClickAble { get; set; }
 
         void Awake()
         {
             SetSingleton(this);
         }
 
+        void Start()
+        {
+            if (_firstLineTrigger == null || _secondLineTrigger == null)
+                CanClickAble = true;
+        }
+
         public void SetDotObject(LineDrawerTest lineTriggerTest)
         {
+            if (!CanClickAble) return;
+            if (_firstLineTrigger == lineTriggerTest)
+            {
+                ResetFirstPick();
+                return;
+            }
+
             if (_firstLineTrigger == null)
             {
                 _firstLineTrigger = lineTriggerTest;
@@ -30,8 +46,15 @@ namespace Tangle.ClickManager
 
         void ResetClickedObjects()
         {
+            CanClickAble = false;
             _firstLineTrigger = null;
             _secondLineTrigger = null;
+        }
+
+        public void ResetFirstPick()
+        {
+            Debug.Log("First pick reset");
+            _firstLineTrigger = null;
         }
 
         void SwapClickedObjectPositions()

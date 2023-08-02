@@ -97,6 +97,7 @@ namespace Tangle.Line
 
         public void ClickEvent()
         {
+            Debug.Log("Dot clicked");
             ClickManager.ClickManager.Instance.SetDotObject(this);
         }
 
@@ -110,6 +111,7 @@ namespace Tangle.Line
         {
             _lineRenderer.enabled = true;
             _polygonCollider.enabled = true;
+            ClickManager.ClickManager.Instance.CanClickAble = true;
         }
 
         public void StartMovement(Transform newTransform)

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2804063659578511731}
   - component: {fileID: 5796369715819476028}
   - component: {fileID: 7024762897096485080}
+  - component: {fileID: 8148529359394794192}
   m_Layer: 6
   m_Name: Dot
   m_TagString: Untagged
@@ -303,3 +304,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerThreshold: 3
+--- !u!210 &8148529359394794192
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6101772273996773166}
+  m_Enabled: 1
+  m_SortingLayerID: -1813861173
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

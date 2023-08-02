@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Dot
+    uniqueID: 2481106123
+    locked: 0
+  - name: EmptyArea
+    uniqueID: 1341064595
+    locked: 0

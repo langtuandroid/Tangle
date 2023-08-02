@@ -53,6 +53,7 @@ namespace Tangle.ClickManager
 
         public void ResetFirstPick()
         {
+            if (_firstLineTrigger == null) return;
             Debug.Log("First pick reset");
             _firstLineTrigger = null;
         }

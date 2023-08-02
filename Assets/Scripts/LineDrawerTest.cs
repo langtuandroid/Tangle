@@ -42,7 +42,7 @@ namespace Tangle.Line
 
             if (nextIndex == 0) // Son obje ise, birinci obje ile çizgi çiz
             {
-                var firstChild = transform.parent.GetChild(0);
+                var firstChild = transform.parent.GetChild(1);
                 Vector3[] positions2 = { transform.position, firstChild.position };
 
                 _lineRenderer.positionCount = 2;
@@ -118,7 +118,7 @@ namespace Tangle.Line
         {
             var sequence = DOTween.Sequence();
             sequence.AppendCallback(CloseLine);
-            sequence.Append(transform.DOMove(newTransform.position, 1f));
+            sequence.Append(transform.DOMove(newTransform.position, .5f));
             sequence.AppendCallback(OpenLine);
         }
     }

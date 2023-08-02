@@ -1,4 +1,3 @@
-using System;
 using RoddGames.Abstracts.Patterns;
 
 namespace Tangle.Level

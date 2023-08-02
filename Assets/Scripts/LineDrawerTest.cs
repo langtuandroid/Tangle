@@ -55,7 +55,7 @@ public class LineDrawer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Test");
+        Debug.Log(gameObject.name);
     }
 }
 

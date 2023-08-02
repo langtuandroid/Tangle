@@ -34,11 +34,13 @@ namespace Tangle.ClickManager
             if (_firstLineTrigger == null)
             {
                 _firstLineTrigger = lineTriggerTest;
+                _firstLineTrigger.HandleOnSelect();
                 Debug.Log("First object pick");
             }
             else
             {
                 _secondLineTrigger = lineTriggerTest;
+                _secondLineTrigger.HandleOnSelect();
                 Debug.Log("Second object pick");
                 SwapClickedObjectPositions();
             }
@@ -47,6 +49,8 @@ namespace Tangle.ClickManager
         void ResetClickedObjects()
         {
             CanClickAble = false;
+            _firstLineTrigger.HandleOnDeselect();
+            _secondLineTrigger.HandleOnDeselect();
             _firstLineTrigger = null;
             _secondLineTrigger = null;
         }
@@ -55,6 +59,7 @@ namespace Tangle.ClickManager
         {
             if (_firstLineTrigger == null) return;
             Debug.Log("First pick reset");
+            _firstLineTrigger.HandleOnDeselect();
             _firstLineTrigger = null;
         }
 

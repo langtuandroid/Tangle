@@ -1,11 +1,13 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Tangle.Line
 {
     public class LineDrawerTest : MonoBehaviour
     {
+        Image _dotImage;
         LineRenderer _lineRenderer;
         PolygonCollider2D _polygonCollider;
         public int triggerThreshold = 3; // Tetikleme için üst üste gelme eşiği
@@ -13,6 +15,7 @@ namespace Tangle.Line
 
         void Start()
         {
+            _dotImage = GetComponent<Image>();
             _lineRenderer = GetComponent<LineRenderer>();
             _polygonCollider = GetComponent<PolygonCollider2D>();
             UpdateLine();
@@ -112,6 +115,16 @@ namespace Tangle.Line
             _lineRenderer.enabled = true;
             _polygonCollider.enabled = true;
             ClickManager.ClickManager.Instance.CanClickAble = true;
+        }
+
+        public void HandleOnSelect()
+        {
+            _dotImage.color = Color.blue;
+        }
+
+        public void HandleOnDeselect()
+        {
+            _dotImage.color = Color.white;
         }
 
         public void StartMovement(Transform newTransform)

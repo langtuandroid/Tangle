@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Line/Dot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Line/Dot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ui/GameCanvas/GameCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ui/GameCanvas/GameCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" afterDir="false" />
     </list>
@@ -130,13 +127,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs</url>
-          <line>47</line>
+          <line>49</line>
           <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Click\ClickManager.cs" initialLine="47" containingFunctionPresentation="Method 'ResetClickedObjects'">
             <startOffsets>
-              <option value="1244" />
+              <option value="1349" />
             </startOffsets>
             <endOffsets>
-              <option value="1245" />
+              <option value="1350" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />

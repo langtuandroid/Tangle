@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using RoddGames.Abstracts.Patterns;
 using RoddGames.ScriptableObjects;
+using RoddGames.ScriptableObjects.GameEventListeners;
 using Tangle.Line;
 using Tangle.ScriptableObjects;
 using UnityEngine;
@@ -12,6 +14,7 @@ namespace Tangle.Levels
         [SerializeField] LevelContainer _levelContainer;
         [SerializeField] GameEvent _levelCompleteEvent;
         [SerializeField] List<LineDrawerTest> _actieveLinesOnTheScene = new();
+        [SerializeField] NormalGameEventListener _nextLevelButtonListener;
         GameObject _currentLevel;
         public int CurrentLevel { get; private set; }
 
@@ -20,6 +23,7 @@ namespace Tangle.Levels
         void Awake()
         {
             SetSingleton(this);
+            GetReference();
         }
 
         void Start()
@@ -48,7 +52,7 @@ namespace Tangle.Levels
             _currentLevel = null;
             CurrentLevel++;
             CleanAllCacheLines();
-            //InitializeLevelObject();
+            _levelCompleteEvent.InvokeEvents();
         }
 
         void InitializeLevelObject()
@@ -75,6 +79,17 @@ namespace Tangle.Levels
         public void UpdateAllLines()
         {
             foreach (var lineDrawerTest in _actieveLinesOnTheScene) lineDrawerTest.UpdateLine();
+        }
+
+        void OnValidate()
+        {
+            GetReference();
+        }
+
+        void GetReference()
+        {
+            if (_nextLevelButtonListener == null)
+                _nextLevelButtonListener = GetComponent<NormalGameEventListener>();
         }
     }
 }

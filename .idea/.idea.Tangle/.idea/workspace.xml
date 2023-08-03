@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/GameCanvas/NextLevelButtonCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/GameCanvas/NextLevelButtonCanvas.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/RoddGames/Abstracts/Uis/BaseButtonWithGameEvent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/RoddGames/Abstracts/Uis/BaseButtonWithGameEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/Buttons/BaseButtonWithGameEvent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/Buttons/BaseButtonWithGameEvent.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +100,7 @@
       <workItem from="1690857569606" duration="8161000" />
       <workItem from="1690923868094" duration="7795000" />
       <workItem from="1690936096104" duration="3276000" />
-      <workItem from="1691050436025" duration="12083000" />
+      <workItem from="1691050436025" duration="12468000" />
     </task>
     <servers />
   </component>

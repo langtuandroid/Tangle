@@ -7,11 +7,8 @@
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/Buttons/BaseButtonWithGameEvent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/Buttons/BaseButtonWithGameEvent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/GameCanvas/DotCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/GameCanvas/DotCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/GameCanvas/NextLevelButtonCanvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/GameCanvas/NextLevelButtonCanvas.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/Dot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/Dot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level/LevelContainer/Level Container.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level/LevelContainer/Level Container.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,28 +30,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;rider.code.cleanup.on.save.profile&quot;: &quot;Built-in: Reformat &amp; Apply Syntax Style&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.53456223",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "rider.code.cleanup.on.save": "true",
+    "rider.code.cleanup.on.save.profile": "Built-in: Reformat & Apply Syntax Style",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Menethil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Menethil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Menethil\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Menethil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Menethil\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Menethil\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Users\Menethil\Desktop\UnityProjects\2022.3.5f1\Editor\Unity.exe" />
@@ -82,10 +80,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30324">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="30324" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -105,7 +103,7 @@
       <workItem from="1690923868094" duration="7795000" />
       <workItem from="1690936096104" duration="3276000" />
       <workItem from="1691050436025" duration="12495000" />
-      <workItem from="1691097888279" duration="3211000" />
+      <workItem from="1691097888279" duration="5671000" />
     </task>
     <servers />
   </component>
@@ -122,42 +120,29 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs</url>
-          <line>48</line>
-          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Level\LevelManager.cs" initialLine="44" containingFunctionPresentation="Method 'HandleOnLevelComplete'">
+          <line>50</line>
+          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Level\LevelManager.cs" initialLine="49" containingFunctionPresentation="Method 'HandleOnLevelComplete'">
             <startOffsets>
-              <option value="1376" />
+              <option value="1487" />
             </startOffsets>
             <endOffsets>
-              <option value="1377" />
+              <option value="1488" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs</url>
-          <line>36</line>
-          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Level\LevelManager.cs" initialLine="32" containingFunctionPresentation="Method 'CheckLevelComplete'">
+          <line>38</line>
+          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Level\LevelManager.cs" initialLine="38" containingFunctionPresentation="Method 'CheckLevelComplete'">
             <startOffsets>
-              <option value="1038" />
+              <option value="1149" />
             </startOffsets>
             <endOffsets>
-              <option value="1039" />
+              <option value="1150" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs</url>
-          <line>156</line>
-          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\_GameFolders\Scripts\LineDrawerTest.cs" initialLine="149" containingFunctionPresentation="Method 'PingLevelManager'">
-            <startOffsets>
-              <option value="5380" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5381" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -16,6 +16,7 @@ namespace Tangle.Levels
         [SerializeField] List<LineDrawerTest> _actieveLinesOnTheScene = new();
         [SerializeField] NormalGameEventListener _nextLevelButtonListener;
         GameObject _currentLevel;
+        bool _isLevelComplete;
         public int CurrentLevel { get; private set; }
 
         public int RedLineCount { get; private set; }
@@ -30,6 +31,7 @@ namespace Tangle.Levels
         {
             Application.targetFrameRate = 60;
             InitializeLevelObject();
+            _nextLevelButtonListener.NoParameterEvent += InitializeLevelObject;
         }
 
 
@@ -57,6 +59,7 @@ namespace Tangle.Levels
 
         void InitializeLevelObject()
         {
+            if (CurrentLevel >= _levelContainer.LevelObjects.Count) CurrentLevel = 0;
             _currentLevel = Instantiate(_levelContainer.LevelObjects[CurrentLevel], Vector3.zero, Quaternion.identity);
             var levelCanvas = _currentLevel.GetComponent<Canvas>();
             levelCanvas.worldCamera = Camera.main;
@@ -90,6 +93,11 @@ namespace Tangle.Levels
         {
             if (_nextLevelButtonListener == null)
                 _nextLevelButtonListener = GetComponent<NormalGameEventListener>();
+        }
+
+        void OnDisable()
+        {
+            _nextLevelButtonListener.NoParameterEvent -= InitializeLevelObject;
         }
     }
 }

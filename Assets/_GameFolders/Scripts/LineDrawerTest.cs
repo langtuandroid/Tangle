@@ -1,6 +1,6 @@
 using System;
 using DG.Tweening;
-using Tangle.Level;
+using Tangle.Levels;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,18 +8,20 @@ namespace Tangle.Line
 {
     public class LineDrawerTest : MonoBehaviour
     {
+        [SerializeField] LineRenderer _lineRenderer;
+        [SerializeField] PolygonCollider2D _polygonCollider;
         Image _dotImage;
-        LineRenderer _lineRenderer;
-        PolygonCollider2D _polygonCollider;
         public int triggerThreshold = 3; // Tetikleme için üst üste gelme eşiği
         int triggerCounter = 0; // Tetikleme için sayaç
+        public bool IsRed { get; private set; }
+        public bool IsPingObject { get; set; }
 
         void Start()
         {
             _dotImage = GetComponent<Image>();
-            _lineRenderer = GetComponent<LineRenderer>();
-            _polygonCollider = GetComponent<PolygonCollider2D>();
-            UpdateLine();
+            //_lineRenderer = GetComponent<LineRenderer>();
+            //_polygonCollider = GetComponent<PolygonCollider2D>();
+            //UpdateLine();
         }
 
         void Update()
@@ -31,6 +33,9 @@ namespace Tangle.Line
         {
             DrawToNext();
             AddPolygonCollider();
+            // triggerCounter = 0;
+            // _polygonCollider.enabled = false;
+            // _polygonCollider.enabled = true;
         }
 
         void DrawToNext()
@@ -83,7 +88,7 @@ namespace Tangle.Line
             if (triggerCounter >= triggerThreshold)
             {
                 Debug.Log(other.gameObject.name);
-                LevelManager.Instance.IncreaseRedLineCount();
+                IsRed = true;
                 _lineRenderer.startColor = Color.red; // Line Renderer'ın başlangıç rengini kırmızı yap
                 _lineRenderer.endColor = Color.red;
                 //  triggerCounter = 0;
@@ -93,9 +98,10 @@ namespace Tangle.Line
         void OnTriggerExit2D(Collider2D other)
         {
             triggerCounter--;
+            triggerCounter = Mathf.Max(triggerCounter, 0);
             if (triggerCounter < triggerThreshold)
             {
-                LevelManager.Instance.DecreaseRedLineCount();
+                IsRed = false;
                 _lineRenderer.startColor = Color.white; // Line Renderer'ın başlangıç rengini kırmızı yap
                 _lineRenderer.endColor = Color.white;
             }
@@ -109,6 +115,7 @@ namespace Tangle.Line
 
         public void CloseLine()
         {
+            triggerCounter = 0;
             _lineRenderer.enabled = false;
             _polygonCollider.enabled = false;
         }
@@ -134,8 +141,25 @@ namespace Tangle.Line
         {
             var sequence = DOTween.Sequence();
             sequence.AppendCallback(CloseLine);
-            sequence.Append(transform.DOMove(newTransform.position, .5f));
+            sequence.Append(transform.DOMove(newTransform.position, .5f))
+                .OnComplete(() =>
+                {
+                    var delayDuration = 0.5f; // Verilecek gecikme süresi
+                    DOTween.Sequence()
+                        .AppendInterval(delayDuration)
+                        .AppendCallback(() => PingLevelManager());
+                });
             sequence.AppendCallback(OpenLine);
+            //sequence.AppendCallback(PingLevelManager).SetDelay(.7f);
+        }
+
+        void PingLevelManager()
+        {
+            Debug.Log("Ping");
+            if (!IsPingObject) return;
+            LevelManager.Instance.UpdateAllLines();
+            LevelManager.Instance.CheckLevelComplete();
+            IsPingObject = false;
         }
     }
 }

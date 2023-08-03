@@ -6,9 +6,49 @@
   <component name="ChangeListManager">
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites/close.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites/dot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites/dot.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites/loop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites/loop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites/unloop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Sprites/unloop.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Camera.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Camera/Main Camera.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Camera/Main Camera.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Line.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Line/Dot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Line/Dot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Line/LineRendererParent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Line/LineRendererParent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Line/LineRendererTest.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Line/LineRendererTest.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ui.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ui/GameCanvas.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ui/GameCanvas/GameCanvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ui/GameCanvas/GameCanvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineRendererController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineRendererController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineSegmentController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineSegmentController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineTriggerTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineTriggerTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/LevelCompleteEvent.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/LevelCompleteEvent.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +57,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/61a83ee4e8ca4c71a48aab1ac09e9b3e3c00/b8/f6be11b1/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/80a09f1fedea4f52883536917df9ffdd2ac00/34/bfdd0742/Tween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bf6080dbf0564cf1b405dfd6e0dac725940e00/e4/ea69385c/Editor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eef08f56e2e042f1b3027eca477293d946ac00/8c/f1b0ed3e/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineDrawerTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineSegmentController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineTriggerTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/LevelContainer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2TMeqFO3otCyj8QbC1QxPZp71HQ" />
   <component name="ProjectViewState">
@@ -78,10 +118,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26856">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17620">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26856" />
+      <option name="pid" value="17620" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -100,6 +140,7 @@
       <workItem from="1690857569606" duration="8161000" />
       <workItem from="1690923868094" duration="7795000" />
       <workItem from="1690936096104" duration="3276000" />
+      <workItem from="1691050436025" duration="11706000" />
     </task>
     <servers />
   </component>
@@ -115,30 +156,43 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs</url>
-          <line>25</line>
-          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Click\ClickManager.cs" initialLine="17" containingFunctionPresentation="Method 'SetDotObject'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs</url>
+          <line>44</line>
+          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Level\LevelManager.cs" initialLine="44" containingFunctionPresentation="Method 'HandleOnLevelComplete'">
             <startOffsets>
-              <option value="649" />
+              <option value="1205" />
             </startOffsets>
             <endOffsets>
-              <option value="650" />
+              <option value="1206" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs</url>
-          <line>49</line>
-          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Click\ClickManager.cs" initialLine="47" containingFunctionPresentation="Method 'ResetClickedObjects'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs</url>
+          <line>32</line>
+          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Level\LevelManager.cs" initialLine="32" containingFunctionPresentation="Method 'CheckLevelComplete'">
             <startOffsets>
-              <option value="1356" />
+              <option value="867" />
             </startOffsets>
             <endOffsets>
-              <option value="1357" />
+              <option value="868" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs</url>
+          <line>156</line>
+          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\_GameFolders\Scripts\LineDrawerTest.cs" initialLine="149" containingFunctionPresentation="Method 'PingLevelManager'">
+            <startOffsets>
+              <option value="5380" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5381" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

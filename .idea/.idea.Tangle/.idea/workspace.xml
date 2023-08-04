@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Click/ClickManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +103,7 @@
       <workItem from="1690936096104" duration="3276000" />
       <workItem from="1691050436025" duration="12495000" />
       <workItem from="1691097888279" duration="5856000" />
-      <workItem from="1691135545438" duration="1242000" />
+      <workItem from="1691135545438" duration="2594000" />
     </task>
     <servers />
   </component>

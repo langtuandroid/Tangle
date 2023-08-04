@@ -51,12 +51,24 @@ namespace Tangle.Line
 
             if (nextIndex == 0) // Son obje ise, birinci obje ile çizgi çiz
             {
-                var firstChild = transform.parent.GetChild(1);
-                Vector3[] positions2 = { transform.position, firstChild.position };
+                var firstChild = FindFirstLineDrawer();
+                Vector3[] positions2 = { transform.position, firstChild.gameObject.transform.position };
 
                 _lineRenderer.positionCount = 2;
                 _lineRenderer.SetPositions(positions2);
             }
+        }
+
+        LineDrawerTest FindFirstLineDrawer()
+        {
+            var childCount = transform.parent.childCount;
+            for (var i = 0; i < childCount; i++)
+            {
+                var child = transform.parent.GetChild(i);
+                if (child.TryGetComponent(out LineDrawerTest lineDrawer)) return lineDrawer;
+            }
+
+            return null;
         }
 
         void AddPolygonCollider()

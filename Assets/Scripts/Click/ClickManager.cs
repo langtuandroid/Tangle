@@ -34,13 +34,13 @@ namespace Tangle.ClickManager
                 _firstLineTrigger = lineTriggerTest;
                 _firstLineTrigger.IsPingObject = true;
                 _firstLineTrigger.HandleOnSelect();
-                Debug.Log("First object pick");
+                //Debug.Log("First object pick");
             }
             else
             {
                 _secondLineTrigger = lineTriggerTest;
                 _secondLineTrigger.HandleOnSelect();
-                Debug.Log("Second object pick");
+                //Debug.Log("Second object pick");
                 SwapClickedObjectPositions();
             }
         }

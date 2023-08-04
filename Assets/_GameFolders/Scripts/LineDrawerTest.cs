@@ -87,7 +87,7 @@ namespace Tangle.Line
 
             if (triggerCounter >= triggerThreshold)
             {
-                Debug.Log(other.gameObject.name);
+                //Debug.Log(other.gameObject.name);
                 IsRed = true;
                 _lineRenderer.startColor = Color.red; // Line Renderer'ın başlangıç rengini kırmızı yap
                 _lineRenderer.endColor = Color.red;
@@ -109,7 +109,7 @@ namespace Tangle.Line
 
         public void ClickEvent()
         {
-            Debug.Log("Dot clicked");
+            //Debug.Log("Dot clicked");
             ClickManager.ClickManager.Instance.SetDotObject(this);
         }
 
@@ -122,8 +122,8 @@ namespace Tangle.Line
 
         void OpenLine()
         {
-            _lineRenderer.enabled = true;
-            _polygonCollider.enabled = true;
+            //_lineRenderer.enabled = true;
+            //_polygonCollider.enabled = true;
             ClickManager.ClickManager.Instance.CanClickAble = true;
         }
 
@@ -140,11 +140,11 @@ namespace Tangle.Line
         public void StartMovement(Transform newTransform)
         {
             var sequence = DOTween.Sequence();
-            sequence.AppendCallback(CloseLine);
+            //sequence.AppendCallback(CloseLine);
             sequence.Append(transform.DOMove(newTransform.position, .5f))
                 .OnComplete(() =>
                 {
-                    var delayDuration = 0.5f; // Verilecek gecikme süresi
+                    var delayDuration = .2f; // Verilecek gecikme süresi
                     DOTween.Sequence()
                         .AppendInterval(delayDuration)
                         .AppendCallback(() => PingLevelManager());
@@ -155,11 +155,13 @@ namespace Tangle.Line
 
         void PingLevelManager()
         {
-            Debug.Log("Ping");
+            Debug.Log(IsPingObject);
+            //Debug.Log("Ping");
             if (!IsPingObject) return;
-            LevelManager.Instance.UpdateAllLines();
+            //LevelManager.Instance.UpdateAllLines();
             LevelManager.Instance.CheckLevelComplete();
             IsPingObject = false;
+            Debug.Log(IsPingObject);
         }
     }
 }

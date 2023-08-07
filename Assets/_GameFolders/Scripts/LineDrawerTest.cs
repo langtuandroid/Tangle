@@ -25,7 +25,7 @@ namespace Tangle.Line
 
         void Update()
         {
-            //UpdateLine();
+            UpdateLine();
         }
 
         public void UpdateLine()
@@ -78,15 +78,30 @@ namespace Tangle.Line
         LineDrawerTest FindFirstLineDrawer()
         {
             var grandParent = transform.parent.parent;
-            var childCount = grandParent.childCount;
-            for (var i = 0; i < childCount; i++)
+            var grandParentChildCount = grandParent.childCount;
+
+            // Döngü grandparent'in child objelerini yukarıdan aşağı doğru kontrol eder.
+            for (var i = 0; i < grandParentChildCount; i++)
             {
-                var child = grandParent.GetChild(i);
-                if (child.TryGetComponent(out LineDrawerTest lineDrawer)) return lineDrawer;
+                var parent = grandParent.GetChild(i);
+                var parentChildCount = parent.childCount;
+
+                // Parent'in child objelerini yukarıdan aşağı doğru kontrol eder.
+                for (var j = 0; j < parentChildCount; j++)
+                {
+                    var child = parent.GetChild(j);
+                    if (child.TryGetComponent(out LineDrawerTest lineDrawer))
+                    {
+                        Debug.Log("Return: " + lineDrawer.gameObject.transform.parent.name);
+                        return lineDrawer;
+                    }
+                }
             }
 
+            Debug.Log("Return null");
             return null;
         }
+
 
         bool IsLastObject()
         {

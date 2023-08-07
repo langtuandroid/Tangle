@@ -351,12 +351,12 @@ PrefabInstance:
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
@@ -418,6 +418,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2073491865665721771, guid: 5832c44530619c04998aca897aeb9e2f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -475,12 +480,12 @@ PrefabInstance:
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
@@ -542,6 +547,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2073491865665721771, guid: 5832c44530619c04998aca897aeb9e2f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -599,12 +609,12 @@ PrefabInstance:
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
@@ -666,6 +676,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2073491865665721771, guid: 5832c44530619c04998aca897aeb9e2f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -723,12 +738,12 @@ PrefabInstance:
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 1985370030614646625, guid: 5832c44530619c04998aca897aeb9e2f,
         type: 3}
@@ -789,6 +804,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073491865665721771, guid: 5832c44530619c04998aca897aeb9e2f,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

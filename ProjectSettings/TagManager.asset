@@ -44,6 +44,9 @@ TagManager:
   - name: Dot
     uniqueID: 2481106123
     locked: 0
+  - name: LineRenderer
+    uniqueID: 30152127
+    locked: 0
   - name: EmptyArea
     uniqueID: 1341064595
     locked: 0

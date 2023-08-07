@@ -5,28 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/ImageContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/ImageContainer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/DotParent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/DotParent.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_3_Canvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_3_Canvas.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_4_Canvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_4_Canvas.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_5_Canvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_5_Canvas.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_6_Canvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_6_Canvas.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_7_Canvas.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_7_Canvas.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level/LevelContainer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level/LevelContainer/Level Container.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level/LevelContainer/Level Container.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Level/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Level/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/LevelContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/LevelContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Containers/Image/Dot Image Container.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Containers/Image/Dot Image Container.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +99,7 @@
       <workItem from="1691097888279" duration="5856000" />
       <workItem from="1691135545438" duration="2594000" />
       <workItem from="1691401747259" duration="11266000" />
-      <workItem from="1691430377707" duration="4050000" />
+      <workItem from="1691430377707" duration="4474000" />
     </task>
     <servers />
   </component>
@@ -140,13 +122,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs</url>
-          <line>39</line>
+          <line>41</line>
           <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\_GameFolders\Scripts\LineDrawerTest.cs" initialLine="39" containingFunctionPresentation="Method 'DrawToNext'">
             <startOffsets>
-              <option value="1013" />
+              <option value="1117" />
             </startOffsets>
             <endOffsets>
-              <option value="1014" />
+              <option value="1118" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="15" />

@@ -1,6 +1,7 @@
 using System;
 using DG.Tweening;
 using Tangle.Levels;
+using Tangle.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ namespace Tangle.Line
         [SerializeField] LineRenderer _lineRenderer;
         [SerializeField] PolygonCollider2D _polygonCollider;
         [SerializeField] Image _selectedDotImage, _selectedAnimationImage;
+        [SerializeField] ImageContainer _greenImageContainer;
         Image _dotImage;
         Tween _rotateTween, _scaleTween;
         public int triggerThreshold = 3; // Tetikleme için üst üste gelme eşiği
@@ -20,7 +22,7 @@ namespace Tangle.Line
 
         void Start()
         {
-            _dotImage = GetComponent<Image>();
+            _dotImage = GetComponentInChildren<Image>();
         }
 
         void Update()

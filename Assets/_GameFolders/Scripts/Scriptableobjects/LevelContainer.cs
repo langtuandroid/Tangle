@@ -7,6 +7,15 @@ namespace Tangle.ScriptableObjects
     public class LevelContainer : ScriptableObject
     {
         [SerializeField] List<GameObject> _levelObjects;
-        public List<GameObject> LevelObjects => _levelObjects;
+
+        public GameObject GetLevel(int index)
+        {
+            return _levelObjects[index];
+        }
+
+        public int GetLevelCount()
+        {
+            return _levelObjects.Count;
+        }
     }
 }

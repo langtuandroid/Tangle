@@ -4,16 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="" />
+    <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/ImageContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/ImageContainer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/DotParent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/DotParent.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_3_Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_3_Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_4_Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_4_Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_5_Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_5_Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_6_Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_6_Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_7_Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_7_Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level/LevelContainer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level/LevelContainer/Level Container.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Level/LevelContainer/Level Container.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Level/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Level/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/LevelContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Scriptableobjects/LevelContainer.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21fbbc7e726941fc8413bc76d7177b3f172000/4e/a0d97a1e/Transform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9be5d760d8204c7dbc66320fdd824250292e00/3a/6b51acb4/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/eaa95166e74c4ae1a419b6aa5baf90b9469200/e2/717f4491/CancellationTokenSource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/Ui/RandomImagePicker.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2TMeqFO3otCyj8QbC1QxPZp71HQ" />
   <component name="ProjectViewState">
@@ -96,7 +117,7 @@
       <workItem from="1691097888279" duration="5856000" />
       <workItem from="1691135545438" duration="2594000" />
       <workItem from="1691401747259" duration="11266000" />
-      <workItem from="1691430377707" duration="2708000" />
+      <workItem from="1691430377707" duration="4050000" />
     </task>
     <servers />
   </component>

@@ -59,8 +59,8 @@ namespace Tangle.Levels
 
         void InitializeLevelObject()
         {
-            if (CurrentLevel >= _levelContainer.LevelObjects.Count) CurrentLevel = 0;
-            _currentLevel = Instantiate(_levelContainer.LevelObjects[CurrentLevel], Vector3.zero, Quaternion.identity);
+            if (CurrentLevel >= _levelContainer.GetLevelCount()) CurrentLevel = 0;
+            _currentLevel = Instantiate(_levelContainer.GetLevel(CurrentLevel), Vector3.zero, Quaternion.identity);
             var levelCanvas = _currentLevel.GetComponent<Canvas>();
             levelCanvas.worldCamera = Camera.main;
             CacheAllLineRenderers(_currentLevel);

@@ -265,11 +265,64 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3001327069312950373}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5141695977941702700, guid: 96a71fd510942c7488d274a9e5c815e0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2771717574988075944}
   m_SourcePrefab: {fileID: 100100000, guid: 96a71fd510942c7488d274a9e5c815e0, type: 3}
+--- !u!1 &3588172053333802269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5141695977941702700, guid: 96a71fd510942c7488d274a9e5c815e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8543687177445631281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2771717574988075944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588172053333802269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627b6022cece1cc46a02c8ae4c4f9d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 947c6ac3a3a138a4183581c65c743a8e, type: 2}
+  _untiyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8785969432073393933}
+        m_TargetAssemblyTypeName: Tangle.Uis.CanvasGroupController, Assembly-CSharp
+        m_MethodName: CanvasUpdateOnEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _untiyEventObject:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &5722808626666097686 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4177869413913831719, guid: 96a71fd510942c7488d274a9e5c815e0,
     type: 3}
   m_PrefabInstance: {fileID: 8543687177445631281}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8785969432073393933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1116697670129824316, guid: 96a71fd510942c7488d274a9e5c815e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8543687177445631281}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588172053333802269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1604332a7157b469b0d364f8c6e85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

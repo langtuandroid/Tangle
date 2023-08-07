@@ -10,7 +10,9 @@ namespace Tangle.Line
     {
         [SerializeField] LineRenderer _lineRenderer;
         [SerializeField] PolygonCollider2D _polygonCollider;
+        [SerializeField] Image _selectedDotImage, _selectedAnimationImage;
         Image _dotImage;
+        Tween _rotateTween, _scaleTween;
         public int triggerThreshold = 3; // Tetikleme için üst üste gelme eşiği
         int triggerCounter = 0; // Tetikleme için sayaç
         public bool IsRed { get; private set; }
@@ -19,56 +21,79 @@ namespace Tangle.Line
         void Start()
         {
             _dotImage = GetComponent<Image>();
-            //_lineRenderer = GetComponent<LineRenderer>();
-            //_polygonCollider = GetComponent<PolygonCollider2D>();
-            //UpdateLine();
         }
 
         void Update()
         {
-            UpdateLine();
+            //UpdateLine();
         }
 
         public void UpdateLine()
         {
             DrawToNext();
             AddPolygonCollider();
-            // triggerCounter = 0;
-            // _polygonCollider.enabled = false;
-            // _polygonCollider.enabled = true;
         }
 
         void DrawToNext()
         {
-            var currentIndex = transform.GetSiblingIndex();
-            var nextIndex = (currentIndex + 1) % transform.parent.childCount;
-
-            var nextChild = transform.parent.GetChild(nextIndex);
-            Vector3[] positions = { transform.position, nextChild.position };
-
-            _lineRenderer.positionCount = 2;
-            _lineRenderer.SetPositions(positions);
-
-            if (nextIndex == 0) // Son obje ise, birinci obje ile çizgi çiz
+            if (IsLastObject())
             {
-                var firstChild = FindFirstLineDrawer();
-                Vector3[] positions2 = { transform.position, firstChild.gameObject.transform.position };
-
-                _lineRenderer.positionCount = 2;
-                _lineRenderer.SetPositions(positions2);
+                var firstLineDrawer = FindFirstLineDrawer();
+                if (firstLineDrawer != null)
+                {
+                    Vector3[] positions = { transform.position, firstLineDrawer.transform.position };
+                    _lineRenderer.positionCount = 2;
+                    _lineRenderer.SetPositions(positions);
+                }
             }
+            else
+            {
+                var nextChild = FindNextChildWithLineDrawer(transform);
+                if (nextChild != null)
+                {
+                    Vector3[] positions = { transform.position, nextChild.transform.position };
+                    _lineRenderer.positionCount = 2;
+                    _lineRenderer.SetPositions(positions);
+                }
+            }
+        }
+
+
+        LineDrawerTest FindNextChildWithLineDrawer(Transform current)
+        {
+            var grandparent = current.parent.parent; // Assuming the grandparent is the common parent of LineDrawerTest objects.
+            var siblingIndex = current.parent.GetSiblingIndex();
+            var nextIndex = (siblingIndex + 1) % grandparent.childCount;
+            var nextChild = grandparent.GetChild(nextIndex);
+
+            var lineDrawer = nextChild.GetComponentInChildren<LineDrawerTest>();
+            if (lineDrawer != null)
+                // Next child has LineDrawerTest component, return it.
+                return lineDrawer;
+            else
+                // Next child does not have LineDrawerTest component, continue searching.
+                return FindNextChildWithLineDrawer(nextChild);
         }
 
         LineDrawerTest FindFirstLineDrawer()
         {
-            var childCount = transform.parent.childCount;
+            var grandParent = transform.parent.parent;
+            var childCount = grandParent.childCount;
             for (var i = 0; i < childCount; i++)
             {
-                var child = transform.parent.GetChild(i);
+                var child = grandParent.GetChild(i);
                 if (child.TryGetComponent(out LineDrawerTest lineDrawer)) return lineDrawer;
             }
 
             return null;
+        }
+
+        bool IsLastObject()
+        {
+            var grandparent = transform.parent.parent; // Assuming the grandparent is the common parent of LineDrawerTest objects.
+            var siblingIndex = transform.parent.GetSiblingIndex();
+            var nextIndex = (siblingIndex + 1) % grandparent.childCount;
+            return nextIndex == 0;
         }
 
         void AddPolygonCollider()
@@ -99,11 +124,9 @@ namespace Tangle.Line
 
             if (triggerCounter >= triggerThreshold)
             {
-                //Debug.Log(other.gameObject.name);
                 IsRed = true;
-                _lineRenderer.startColor = Color.red; // Line Renderer'ın başlangıç rengini kırmızı yap
-                _lineRenderer.endColor = Color.red;
-                //  triggerCounter = 0;
+                _lineRenderer.startColor = Color.white; // Line Renderer'ın başlangıç rengini kırmızı yap
+                _lineRenderer.endColor = Color.white;
             }
         }
 
@@ -114,14 +137,13 @@ namespace Tangle.Line
             if (triggerCounter < triggerThreshold)
             {
                 IsRed = false;
-                _lineRenderer.startColor = Color.white; // Line Renderer'ın başlangıç rengini kırmızı yap
-                _lineRenderer.endColor = Color.white;
+                _lineRenderer.startColor = Color.green; // Line Renderer'ın başlangıç rengini kırmızı yap
+                _lineRenderer.endColor = Color.green;
             }
         }
 
         public void ClickEvent()
         {
-            //Debug.Log("Dot clicked");
             ClickManager.ClickManager.Instance.SetDotObject(this);
         }
 
@@ -134,43 +156,58 @@ namespace Tangle.Line
 
         void OpenLine()
         {
-            //_lineRenderer.enabled = true;
-            //_polygonCollider.enabled = true;
             ClickManager.ClickManager.Instance.CanClickAble = true;
         }
 
         public void HandleOnSelect()
         {
-            _dotImage.color = Color.blue;
+            _selectedDotImage.enabled = true;
+            _selectedAnimationImage.enabled = true;
+            if (!_rotateTween.IsActive() && !_scaleTween.IsActive())
+            {
+                _rotateTween = _selectedAnimationImage.transform
+                    .DORotate(new Vector3(0, 0, 360), 4f, RotateMode.FastBeyond360)
+                    .SetLoops(-1, LoopType.Restart)
+                    .SetEase(Ease.Linear);
+                _scaleTween = _selectedDotImage.transform.DOScale(new Vector3(2f, 2f, 2f), .5f)
+                    .SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+            }
+
+            else
+            {
+                _rotateTween.Play();
+                _scaleTween.Play();
+            }
         }
 
         public void HandleOnDeselect()
         {
-            _dotImage.color = Color.white;
+            _selectedDotImage.enabled = false;
+            _selectedAnimationImage.enabled = false;
+            _rotateTween.Pause();
+            _scaleTween.Pause();
         }
 
         public void StartMovement(Transform newTransform)
         {
+            if (_selectedAnimationImage.enabled)
+                _selectedDotImage.enabled = false;
             var sequence = DOTween.Sequence();
-            //sequence.AppendCallback(CloseLine);
-            sequence.Append(transform.DOMove(newTransform.position, .5f))
+            sequence.Append(transform.parent.DOMove(newTransform.position, .5f))
                 .OnComplete(() =>
                 {
-                    var delayDuration = .2f; // Verilecek gecikme süresi
+                    var delayDuration = .2f;
                     DOTween.Sequence()
                         .AppendInterval(delayDuration)
                         .AppendCallback(() => PingLevelManager());
                 });
             sequence.AppendCallback(OpenLine);
-            //sequence.AppendCallback(PingLevelManager).SetDelay(.7f);
         }
 
         void PingLevelManager()
         {
             Debug.Log(IsPingObject);
-            //Debug.Log("Ping");
             if (!IsPingObject) return;
-            //LevelManager.Instance.UpdateAllLines();
             LevelManager.Instance.CheckLevelComplete();
             IsPingObject = false;
             Debug.Log(IsPingObject);

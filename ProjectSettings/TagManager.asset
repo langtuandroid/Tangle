@@ -41,12 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SelectedPlanetAnimation
+    uniqueID: 2028428433
+    locked: 0
   - name: Dot
-    uniqueID: 2481106123
-    locked: 0
-  - name: LineRenderer
-    uniqueID: 30152127
-    locked: 0
-  - name: EmptyArea
-    uniqueID: 1341064595
+    uniqueID: 1900122317
     locked: 0

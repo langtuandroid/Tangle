@@ -39,7 +39,7 @@ namespace Tangle.ClickManager
             else
             {
                 _secondLineTrigger = lineTriggerTest;
-                _secondLineTrigger.HandleOnSelect();
+                // _secondLineTrigger.HandleOnSelect();
                 //Debug.Log("Second object pick");
                 SwapClickedObjectPositions();
             }

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs" afterDir="false" />
-    </list>
+    <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +96,7 @@
       <workItem from="1691097888279" duration="5856000" />
       <workItem from="1691135545438" duration="2594000" />
       <workItem from="1691401747259" duration="11266000" />
-      <workItem from="1691430377707" duration="1995000" />
+      <workItem from="1691430377707" duration="2708000" />
     </task>
     <servers />
   </component>

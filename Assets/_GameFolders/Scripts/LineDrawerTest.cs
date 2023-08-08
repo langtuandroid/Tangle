@@ -27,7 +27,7 @@ namespace Tangle.Line
 
         void Start()
         {
-            //SetDotImage();
+            SetDotImage();
         }
 
         void Update()
@@ -164,10 +164,11 @@ namespace Tangle.Line
 
         void SetDotImage()
         {
-            if (triggerCounter <= 2)
-                _dotImage.sprite = _randomImagePicker.PickRandomImage(true);
-            else
-                _dotImage.sprite = _randomImagePicker.PickRandomImage(false);
+            // if (triggerCounter <= 2)
+            //     _dotImage.sprite = _randomImagePicker.PickRandomImage(true);
+            // else
+            //     _dotImage.sprite = _randomImagePicker.PickRandomImage(false);
+            _dotImage.sprite = _randomImagePicker.PickRandomImage(false);
         }
 
         public void ClickEvent()

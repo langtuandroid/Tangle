@@ -1,40 +1,24 @@
 using Tangle.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 namespace Tangle.Uis
 {
-    public class RandomImagePicker : MonoBehaviour
+    public class RandomImagePicker
     {
-        [SerializeField] ImageContainer _imageContainer;
-        [SerializeField] Image _image;
+        ImageContainer _unSolvedImageContainer, _solvedImageContainer;
 
-        void Awake()
+        public RandomImagePicker(ImageContainer unSolvedImageContainer, ImageContainer solvedImageContainer)
         {
-            GetReference();
+            _unSolvedImageContainer = unSolvedImageContainer;
+            _solvedImageContainer = solvedImageContainer;
         }
 
-        void Start()
+        public Sprite PickRandomImage(bool value)
         {
-            _image.sprite = PickRandomImage();
-            _image.SetNativeSize();
-        }
-
-        Sprite PickRandomImage()
-        {
-            return _imageContainer.GetRandomImage();
-        }
-
-        void GetReference()
-        {
-            if (_image == null)
-                _image = GetComponent<Image>();
-        }
-
-        void OnValidate()
-        {
-            GetReference();
+            if (!value)
+                return _unSolvedImageContainer.GetRandomImage();
+            return _solvedImageContainer.GetRandomImage();
         }
     }
 }

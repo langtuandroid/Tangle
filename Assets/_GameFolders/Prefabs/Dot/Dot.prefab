@@ -141,6 +141,11 @@ MonoBehaviour:
   _polygonCollider: {fileID: 9101555959004018006}
   _selectedDotImage: {fileID: 0}
   _selectedAnimationImage: {fileID: 0}
+  _dotImage: {fileID: 0}
+  _solvedImageContainer: {fileID: 11400000, guid: 5ba606d62d4511d4892fc23415a059d4,
+    type: 2}
+  _unsolvedImageContainer: {fileID: 11400000, guid: 28b5574f1382a4942982ecef76667749,
+    type: 2}
   triggerThreshold: 3
 --- !u!120 &2073491865665721771
 LineRenderer:

@@ -57,7 +57,6 @@ namespace Tangle.ClickManager
         public void ResetFirstPick()
         {
             if (_firstLineTrigger == null) return;
-            Debug.Log("First pick reset");
             _firstLineTrigger.HandleOnDeselect();
             _firstLineTrigger.IsPingObject = false;
             _firstLineTrigger = null;
@@ -68,7 +67,6 @@ namespace Tangle.ClickManager
             _firstLineTrigger.StartMovement(_secondLineTrigger.gameObject.transform);
             _secondLineTrigger.StartMovement(_firstLineTrigger.gameObject.transform);
             ResetClickedObjects();
-            Debug.Log("Swap started");
         }
     }
 }

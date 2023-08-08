@@ -1,7 +1,7 @@
-using System;
 using DG.Tweening;
 using Tangle.Levels;
 using Tangle.ScriptableObjects;
+using Tangle.Uis;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,23 +11,29 @@ namespace Tangle.Line
     {
         [SerializeField] LineRenderer _lineRenderer;
         [SerializeField] PolygonCollider2D _polygonCollider;
-        [SerializeField] Image _selectedDotImage, _selectedAnimationImage;
-        [SerializeField] ImageContainer _greenImageContainer;
-        Image _dotImage;
+        [SerializeField] Image _selectedDotImage, _selectedAnimationImage, _dotImage;
+        [SerializeField] ImageContainer _solvedImageContainer, _unsolvedImageContainer;
+        RandomImagePicker _randomImagePicker;
         Tween _rotateTween, _scaleTween;
         public int triggerThreshold = 3; // Tetikleme için üst üste gelme eşiği
         int triggerCounter = 0; // Tetikleme için sayaç
         public bool IsRed { get; private set; }
         public bool IsPingObject { get; set; }
 
+        void Awake()
+        {
+            _randomImagePicker = new RandomImagePicker(_unsolvedImageContainer, _solvedImageContainer);
+        }
+
         void Start()
         {
-            _dotImage = GetComponentInChildren<Image>();
+            //SetDotImage();
         }
 
         void Update()
         {
             UpdateLine();
+            Debug.Log(gameObject.transform.parent.name + " counter : " + triggerCounter);
         }
 
         public void UpdateLine()
@@ -92,15 +98,10 @@ namespace Tangle.Line
                 for (var j = 0; j < parentChildCount; j++)
                 {
                     var child = parent.GetChild(j);
-                    if (child.TryGetComponent(out LineDrawerTest lineDrawer))
-                    {
-                        Debug.Log("Return: " + lineDrawer.gameObject.transform.parent.name);
-                        return lineDrawer;
-                    }
+                    if (child.TryGetComponent(out LineDrawerTest lineDrawer)) return lineDrawer;
                 }
             }
 
-            Debug.Log("Return null");
             return null;
         }
 
@@ -138,7 +139,7 @@ namespace Tangle.Line
         void OnTriggerEnter2D(Collider2D other)
         {
             triggerCounter++;
-
+            SetDotImage();
             if (triggerCounter >= triggerThreshold)
             {
                 IsRed = true;
@@ -150,13 +151,23 @@ namespace Tangle.Line
         void OnTriggerExit2D(Collider2D other)
         {
             triggerCounter--;
+            SetDotImage();
             triggerCounter = Mathf.Max(triggerCounter, 0);
             if (triggerCounter < triggerThreshold)
             {
                 IsRed = false;
                 _lineRenderer.startColor = Color.green; // Line Renderer'ın başlangıç rengini kırmızı yap
                 _lineRenderer.endColor = Color.green;
+                //SetDotImage(true);
             }
+        }
+
+        void SetDotImage()
+        {
+            if (triggerCounter <= 2)
+                _dotImage.sprite = _randomImagePicker.PickRandomImage(true);
+            else
+                _dotImage.sprite = _randomImagePicker.PickRandomImage(false);
         }
 
         public void ClickEvent()
@@ -186,7 +197,7 @@ namespace Tangle.Line
                     .DORotate(new Vector3(0, 0, 360), 4f, RotateMode.FastBeyond360)
                     .SetLoops(-1, LoopType.Restart)
                     .SetEase(Ease.Linear);
-                _scaleTween = _selectedDotImage.transform.DOScale(new Vector3(2f, 2f, 2f), .5f)
+                _scaleTween = _selectedDotImage.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), .5f)
                     .SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
             }
 

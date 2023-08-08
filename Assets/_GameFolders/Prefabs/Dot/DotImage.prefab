@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2784928086538140515}
   - component: {fileID: 7857911851248600856}
   - component: {fileID: 6155768934067193793}
-  - component: {fileID: 7602383507914842485}
   m_Layer: 5
   m_Name: DotImage
   m_TagString: Untagged
@@ -148,17 +147,3 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 119
---- !u!114 &7602383507914842485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8414895931790111713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 823f8ce262bc2304584e6b3ab15797dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _imageContainer: {fileID: 11400000, guid: 28b5574f1382a4942982ecef76667749, type: 2}
-  _image: {fileID: 2491994563434571176}

@@ -6,9 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tangle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/Dot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/Dot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/DotImage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/DotImage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/DotParent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Dot/DotParent.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_1_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_1_Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/GameCanvas/DotCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Ui/GameCanvas/DotCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_2_Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_3_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_3_Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_4_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_4_Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_5_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Prefabs/Levels/Level_5_Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Containers/Level/LevelContainer/Level Container.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/ScriptableObjects/ScriptableObjects/Containers/Level/LevelContainer/Level Container.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Click/ClickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Click/ClickManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Ui/RandomImagePicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_GameFolders/Scripts/Ui/RandomImagePicker.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +109,7 @@
       <workItem from="1691135545438" duration="2594000" />
       <workItem from="1691401747259" duration="11266000" />
       <workItem from="1691430377707" duration="4474000" />
-      <workItem from="1691494915971" duration="1269000" />
+      <workItem from="1691494915971" duration="6585000" />
     </task>
     <servers />
   </component>
@@ -120,19 +129,6 @@
           <line>50</line>
           <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\Scripts\Level\LevelManager.cs" initialLine="49" containingFunctionPresentation="Method 'HandleOnLevelComplete'" />
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_GameFolders/Scripts/LineDrawerTest.cs</url>
-          <line>41</line>
-          <properties documentPath="C:\Users\Menethil\Desktop\UnityProjects\Tangle\Assets\_GameFolders\Scripts\LineDrawerTest.cs" initialLine="39" containingFunctionPresentation="Method 'DrawToNext'">
-            <startOffsets>
-              <option value="1117" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1118" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

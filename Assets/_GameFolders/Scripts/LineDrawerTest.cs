@@ -229,5 +229,11 @@ namespace Tangle.Line
             IsPingObject = false;
             Debug.Log(IsPingObject);
         }
+
+        void OnDisable()
+        {
+            _rotateTween.Kill();
+            _scaleTween.Kill();
+        }
     }
 }

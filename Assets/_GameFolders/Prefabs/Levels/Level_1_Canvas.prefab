@@ -382,6 +382,21 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 32709
       objectReference: {fileID: 0}
+    - target: {fileID: 7056308047817045601, guid: 57287f2234e26fd4198d183268b8bb65,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056308047817045601, guid: 57287f2234e26fd4198d183268b8bb65,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7056308047817045601, guid: 57287f2234e26fd4198d183268b8bb65,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7206834917525032306, guid: 57287f2234e26fd4198d183268b8bb65,
         type: 3}
       propertyPath: m_AnchoredPosition.x

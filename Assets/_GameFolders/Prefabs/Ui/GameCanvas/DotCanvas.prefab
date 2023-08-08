@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 7056308047817045601}
   - component: {fileID: 6644586936618746020}
   - component: {fileID: 5615559570152513551}
+  - component: {fileID: 441955866531605710}
   m_Layer: 5
   m_Name: SkyBackGround
   m_TagString: Untagged
@@ -145,15 +146,15 @@ RectTransform:
   m_GameObject: {fileID: 7765345484750588294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.9, y: 1.9, z: 1.9}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3789825533007212507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 2220, y: 3321.081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6644586936618746020
 CanvasRenderer:
@@ -193,6 +194,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &441955866531605710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765345484750588294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c467da982a24b046b1949c76ea802f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animDuration: 10
 --- !u!1001 &7915313742598756084
 PrefabInstance:
   m_ObjectHideFlags: 0

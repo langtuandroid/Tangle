@@ -65,8 +65,7 @@ namespace Tangle.Levels
 
         void InitializeLevelObject()
         {
-            Destroy(_currentLevel);
-            CleanAllCacheLines();
+            DestroyCurrentLevel();
             SetIsLevelComplete(false);
             if (CurrentLevel >= _levelContainer.GetLevelCount()) CurrentLevel = 0;
             _currentLevel = Instantiate(_levelContainer.GetLevel(CurrentLevel), Vector3.zero, Quaternion.identity);
@@ -74,6 +73,16 @@ namespace Tangle.Levels
             levelCanvas.worldCamera = Camera.main;
             CacheAllLineRenderers(_currentLevel);
             ClickManager.ClickManager.Instance.CanClickAble = true;
+        }
+
+        void DestroyCurrentLevel()
+        {
+            if (CurrentLevel > 0)
+            {
+                Destroy(_currentLevel);
+                _currentLevel = null;
+                CleanAllCacheLines();
+            }
         }
 
         public void UpdateAllActieveLines(bool value)

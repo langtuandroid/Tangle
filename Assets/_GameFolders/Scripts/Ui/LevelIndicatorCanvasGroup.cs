@@ -23,7 +23,7 @@ namespace Tangle.Uis
         void UpdateLevelText()
         {
             if (_levelManager == null) return;
-            _textMeshProUGUI.text = "Level : " + (_levelManager.CurrentLevel + 1).ToString();
+            _textMeshProUGUI.text = "Level " + (_levelManager.CurrentLevel + 1).ToString();
         }
 
         public override void GetReference()

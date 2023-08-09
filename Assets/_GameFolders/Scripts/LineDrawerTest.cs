@@ -37,39 +37,9 @@ namespace Tangle.Line
         {
             if (_isMoving)
                 UpdateLine();
-            //Debug.Log(gameObject.transform.parent.name + " counter : " + triggerCounter);
         }
 
-        public void UpdateLine()
-        {
-            DrawToNext();
-            AddPolygonCollider();
-        }
-
-        void DrawToNext()
-        {
-            if (IsLastObject())
-            {
-                var firstLineDrawer = FindFirstLineDrawer();
-                if (firstLineDrawer != null)
-                {
-                    Vector3[] positions = { transform.position, firstLineDrawer.transform.position };
-                    _lineRenderer.positionCount = 2;
-                    _lineRenderer.SetPositions(positions);
-                }
-            }
-            else
-            {
-                var nextChild = FindNextChildWithLineDrawer(transform);
-                if (nextChild != null)
-                {
-                    Vector3[] positions = { transform.position, nextChild.transform.position };
-                    _lineRenderer.positionCount = 2;
-                    _lineRenderer.SetPositions(positions);
-                }
-            }
-        }
-
+        #region LineRendererMethods
 
         LineDrawerTest FindNextChildWithLineDrawer(Transform current)
         {
@@ -118,15 +88,6 @@ namespace Tangle.Line
             return null;
         }
 
-
-        bool IsLastObject()
-        {
-            var grandparent = transform.parent.parent; // Assuming the grandparent is the common parent of LineDrawerTest objects.
-            var siblingIndex = transform.parent.GetSiblingIndex();
-            var nextIndex = (siblingIndex + 1) % grandparent.childCount;
-            return nextIndex == 0;
-        }
-
         void AddPolygonCollider()
         {
             if (!_polygonCollider.enabled) return;
@@ -149,6 +110,48 @@ namespace Tangle.Line
 
             _polygonCollider.points = colliderPoints;
         }
+
+        void DrawToNext()
+        {
+            if (IsLastObject())
+            {
+                var firstLineDrawer = FindFirstLineDrawer();
+                if (firstLineDrawer != null)
+                {
+                    Vector3[] positions = { transform.position, firstLineDrawer.transform.position };
+                    _lineRenderer.positionCount = 2;
+                    _lineRenderer.SetPositions(positions);
+                }
+            }
+            else
+            {
+                var nextChild = FindNextChildWithLineDrawer(transform);
+                if (nextChild != null)
+                {
+                    Vector3[] positions = { transform.position, nextChild.transform.position };
+                    _lineRenderer.positionCount = 2;
+                    _lineRenderer.SetPositions(positions);
+                }
+            }
+        }
+
+        #endregion
+
+        public void UpdateLine()
+        {
+            DrawToNext();
+            AddPolygonCollider();
+        }
+
+
+        bool IsLastObject()
+        {
+            var grandparent = transform.parent.parent; // Assuming the grandparent is the common parent of LineDrawerTest objects.
+            var siblingIndex = transform.parent.GetSiblingIndex();
+            var nextIndex = (siblingIndex + 1) % grandparent.childCount;
+            return nextIndex == 0;
+        }
+
 
         void OnTriggerEnter2D(Collider2D other)
         {
@@ -178,10 +181,6 @@ namespace Tangle.Line
 
         void SetDotImage()
         {
-            // if (triggerCounter <= 2)
-            //     _dotImage.sprite = _randomImagePicker.PickRandomImage(true);
-            // else
-            //     _dotImage.sprite = _randomImagePicker.PickRandomImage(false);
             _dotImage.sprite = _randomImagePicker.PickRandomImage(false);
         }
 
@@ -195,8 +194,6 @@ namespace Tangle.Line
             if (IsPingObject)
                 LevelManager.Instance.UpdateAllActieveLines(true);
             triggerCounter = 0;
-            //_polygonCollider.enabled = false;
-            //_lineRenderer.enabled = false;
         }
 
         void OpenLine()
@@ -248,18 +245,6 @@ namespace Tangle.Line
 
         public void StartMovement(Transform newTransform)
         {
-            /*if (_selectedAnimationImage.enabled)
-                _selectedDotImage.enabled = false;
-            var sequence = DOTween.Sequence();
-            sequence.Append(transform.parent.DOMove(newTransform.position, .5f))
-                .OnComplete(() =>
-                {
-                    var delayDuration = .2f;
-                    DOTween.Sequence()
-                        .AppendInterval(delayDuration)
-                        .AppendCallback(() => PingLevelManager());
-                });
-            sequence.AppendCallback(OpenLine);*/
             if (_selectedAnimationImage.enabled)
                 _selectedDotImage.enabled = false;
 
@@ -267,8 +252,6 @@ namespace Tangle.Line
             sequence.AppendCallback(CloseLine)
                 .Append(transform.parent.DOMove(newTransform.position, .3f))
                 .AppendCallback(OpenLine);
-            /*sequence.Append(transform.parent.DOMove(newTransform.position, 5f)).AppendCallback(AppendEndTest);
-            sequence.Append(AppendStartTest)*/
         }
 
         void AppendEndTest()

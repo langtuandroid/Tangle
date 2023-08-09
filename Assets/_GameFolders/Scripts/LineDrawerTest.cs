@@ -14,11 +14,12 @@ namespace Tangle.Line
         [SerializeField] PolygonCollider2D _polygonCollider;
         [SerializeField] Image _selectedDotImage, _selectedAnimationImage, _dotImage;
         [SerializeField] ImageContainer _solvedImageContainer, _unsolvedImageContainer;
+        [SerializeField] LineDrawerTest _pairedLineDraver;
         RandomImagePicker _randomImagePicker;
         Tween _rotateTween, _scaleTween;
         public int triggerThreshold = 3; // Tetikleme için üst üste gelme eşiği
         int triggerCounter = 0; // Tetikleme için sayaç
-        public bool IsRed { get; private set; }
+        [field: SerializeField] public bool IsRed { get; private set; }
         public bool IsPingObject { get; set; }
         public bool _isMoving;
 
@@ -79,11 +80,16 @@ namespace Tangle.Line
 
             var lineDrawer = nextChild.GetComponentInChildren<LineDrawerTest>();
             if (lineDrawer != null)
+            {
+                lineDrawer._pairedLineDraver = this;
                 // Next child has LineDrawerTest component, return it.
                 return lineDrawer;
+            }
             else
                 // Next child does not have LineDrawerTest component, continue searching.
+            {
                 return FindNextChildWithLineDrawer(nextChild);
+            }
         }
 
         LineDrawerTest FindFirstLineDrawer()
@@ -101,7 +107,11 @@ namespace Tangle.Line
                 for (var j = 0; j < parentChildCount; j++)
                 {
                     var child = parent.GetChild(j);
-                    if (child.TryGetComponent(out LineDrawerTest lineDrawer)) return lineDrawer;
+                    if (child.TryGetComponent(out LineDrawerTest lineDrawer))
+                    {
+                        lineDrawer._pairedLineDraver = this;
+                        return lineDrawer;
+                    }
                 }
             }
 

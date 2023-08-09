@@ -41,6 +41,8 @@ namespace Tangle.ClickManager
                 _secondLineTrigger = lineTriggerTest;
                 // _secondLineTrigger.HandleOnSelect();
                 //Debug.Log("Second object pick");
+                _firstLineTrigger.SetIsMoving(true);
+                _secondLineTrigger.SetIsMoving(true);
                 SwapClickedObjectPositions();
             }
         }
@@ -58,7 +60,6 @@ namespace Tangle.ClickManager
         {
             if (_firstLineTrigger == null) return;
             _firstLineTrigger.HandleOnDeselect();
-            _firstLineTrigger.IsPingObject = false;
             _firstLineTrigger = null;
         }
 

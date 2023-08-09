@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using Tangle.Levels;
 using Tangle.ScriptableObjects;
@@ -19,6 +20,7 @@ namespace Tangle.Line
         int triggerCounter = 0; // Tetikleme için sayaç
         public bool IsRed { get; private set; }
         public bool IsPingObject { get; set; }
+        public bool _isMoving;
 
         void Awake()
         {
@@ -32,8 +34,9 @@ namespace Tangle.Line
 
         void Update()
         {
-            UpdateLine();
-            Debug.Log(gameObject.transform.parent.name + " counter : " + triggerCounter);
+            if (_isMoving)
+                UpdateLine();
+            //Debug.Log(gameObject.transform.parent.name + " counter : " + triggerCounter);
         }
 
         public void UpdateLine()
@@ -116,6 +119,7 @@ namespace Tangle.Line
 
         void AddPolygonCollider()
         {
+            if (!_polygonCollider.enabled) return;
             var startPoint = _lineRenderer.GetPosition(0);
             var endPoint = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
 
@@ -178,14 +182,27 @@ namespace Tangle.Line
 
         public void CloseLine()
         {
+            if (IsPingObject)
+                LevelManager.Instance.UpdateAllActieveLines(true);
             triggerCounter = 0;
-            _lineRenderer.enabled = false;
-            _polygonCollider.enabled = false;
+            //_polygonCollider.enabled = false;
+            //_lineRenderer.enabled = false;
         }
 
         void OpenLine()
         {
             ClickManager.ClickManager.Instance.CanClickAble = true;
+            UpdateLine();
+            _polygonCollider.enabled = !_polygonCollider.enabled;
+            _polygonCollider.enabled = !_polygonCollider.enabled;
+            if (IsPingObject)
+            {
+                PingLevelManager();
+                LevelManager.Instance.UpdateAllActieveLines(false);
+                IsPingObject = false;
+            }
+
+            SetIsMoving(false);
         }
 
         public void HandleOnSelect()
@@ -211,6 +228,8 @@ namespace Tangle.Line
 
         public void HandleOnDeselect()
         {
+            if (IsPingObject && !_isMoving)
+                IsPingObject = false;
             _selectedDotImage.enabled = false;
             _selectedAnimationImage.enabled = false;
             _rotateTween.Pause();
@@ -219,7 +238,7 @@ namespace Tangle.Line
 
         public void StartMovement(Transform newTransform)
         {
-            if (_selectedAnimationImage.enabled)
+            /*if (_selectedAnimationImage.enabled)
                 _selectedDotImage.enabled = false;
             var sequence = DOTween.Sequence();
             sequence.Append(transform.parent.DOMove(newTransform.position, .5f))
@@ -230,22 +249,50 @@ namespace Tangle.Line
                         .AppendInterval(delayDuration)
                         .AppendCallback(() => PingLevelManager());
                 });
-            sequence.AppendCallback(OpenLine);
+            sequence.AppendCallback(OpenLine);*/
+            if (_selectedAnimationImage.enabled)
+                _selectedDotImage.enabled = false;
+
+            var sequence = DOTween.Sequence();
+            sequence.AppendCallback(CloseLine)
+                .Append(transform.parent.DOMove(newTransform.position, .3f))
+                .AppendCallback(OpenLine);
+            /*sequence.Append(transform.parent.DOMove(newTransform.position, 5f)).AppendCallback(AppendEndTest);
+            sequence.Append(AppendStartTest)*/
+        }
+
+        void AppendEndTest()
+        {
+            Debug.Log("End of movement");
+        }
+
+        void AppendStartTest()
+        {
+            Debug.Log("Start of movement");
         }
 
         void PingLevelManager()
         {
-            Debug.Log(IsPingObject);
             if (!IsPingObject) return;
-            LevelManager.Instance.CheckLevelComplete();
+            StartCoroutine(PingLevelManagerRoute());
             IsPingObject = false;
-            Debug.Log(IsPingObject);
+        }
+
+        IEnumerator PingLevelManagerRoute()
+        {
+            yield return new WaitForSeconds(.5f);
+            LevelManager.Instance.CheckLevelComplete();
         }
 
         void OnDisable()
         {
             _rotateTween.Kill();
             _scaleTween.Kill();
+        }
+
+        public void SetIsMoving(bool value)
+        {
+            _isMoving = value;
         }
     }
 }

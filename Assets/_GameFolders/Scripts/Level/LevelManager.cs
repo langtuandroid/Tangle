@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using RoddGames.Abstracts.Patterns;
 using RoddGames.ScriptableObjects;
@@ -37,6 +36,7 @@ namespace Tangle.Levels
 
         public void CheckLevelComplete()
         {
+            if (_isLevelComplete) return;
             foreach (var lineDrawer in _actieveLinesOnTheScene)
                 if (lineDrawer.IsRed)
                 {
@@ -47,9 +47,15 @@ namespace Tangle.Levels
             HandleOnLevelComplete();
         }
 
+        void SetIsLevelComplete(bool value)
+        {
+            _isLevelComplete = value;
+        }
+
         void HandleOnLevelComplete()
         {
             Debug.Log("Level Complete");
+            SetIsLevelComplete(true);
             Destroy(_currentLevel);
             _currentLevel = null;
             CurrentLevel++;
@@ -59,12 +65,18 @@ namespace Tangle.Levels
 
         void InitializeLevelObject()
         {
+            SetIsLevelComplete(false);
             if (CurrentLevel >= _levelContainer.GetLevelCount()) CurrentLevel = 0;
             _currentLevel = Instantiate(_levelContainer.GetLevel(CurrentLevel), Vector3.zero, Quaternion.identity);
             var levelCanvas = _currentLevel.GetComponent<Canvas>();
             levelCanvas.worldCamera = Camera.main;
             CacheAllLineRenderers(_currentLevel);
             ClickManager.ClickManager.Instance.CanClickAble = true;
+        }
+
+        public void UpdateAllActieveLines(bool value)
+        {
+            foreach (var lineDrawerTest in _actieveLinesOnTheScene) lineDrawerTest.SetIsMoving(value);
         }
 
         void CacheAllLineRenderers(GameObject levelObject)

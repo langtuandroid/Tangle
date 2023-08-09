@@ -269,6 +269,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VariantLevelIndicatorCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5711959116301867133, guid: 70151582f7644104998760d56178c861,
+        type: 3}
+      propertyPath: _levelManager
+      value: 
+      objectReference: {fileID: 589014228}
     - target: {fileID: 8878141776108154605, guid: 70151582f7644104998760d56178c861,
         type: 3}
       propertyPath: m_Pivot.x
@@ -566,6 +571,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!114 &589014228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1453768916867743619, guid: b78290329dec5524985dcf6b2a2dfc43,
+    type: 3}
+  m_PrefabInstance: {fileID: 2526987289211963333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7824b2a1e96d30441b1782516901d237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &701732085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -673,11 +690,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789142264254199388, guid: 121a5472522b972469855bc494ffdaba,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 8547499925243145770, guid: 121a5472522b972469855bc494ffdaba,
         type: 3}

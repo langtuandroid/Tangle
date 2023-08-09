@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Tangle.Uis
@@ -11,7 +12,7 @@ namespace Tangle.Uis
             GetReference();
         }
 
-        public void CanvasUpdateOnEvent()
+        public virtual void CanvasUpdateOnEvent()
         {
             _canvasGroup.alpha = 1f - _canvasGroup.alpha;
             _canvasGroup.interactable = !_canvasGroup.interactable;
@@ -23,7 +24,7 @@ namespace Tangle.Uis
             GetReference();
         }
 
-        void GetReference()
+        public virtual void GetReference()
         {
             if (_canvasGroup == null)
                 _canvasGroup = GetComponent<CanvasGroup>();

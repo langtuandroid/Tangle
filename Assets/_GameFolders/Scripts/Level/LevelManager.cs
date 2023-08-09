@@ -56,15 +56,17 @@ namespace Tangle.Levels
         {
             Debug.Log("Level Complete");
             SetIsLevelComplete(true);
-            Destroy(_currentLevel);
+            //Destroy(_currentLevel);
             _currentLevel = null;
             CurrentLevel++;
-            CleanAllCacheLines();
+            //CleanAllCacheLines();
             _levelCompleteEvent.InvokeEvents();
         }
 
         void InitializeLevelObject()
         {
+            Destroy(_currentLevel);
+            CleanAllCacheLines();
             SetIsLevelComplete(false);
             if (CurrentLevel >= _levelContainer.GetLevelCount()) CurrentLevel = 0;
             _currentLevel = Instantiate(_levelContainer.GetLevel(CurrentLevel), Vector3.zero, Quaternion.identity);

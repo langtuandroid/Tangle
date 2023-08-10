@@ -1,7 +1,6 @@
 using Lofelt.NiceVibrations;
 using RoddGames.Abstracts.Patterns;
 using Tangle.Line;
-using UnityEngine;
 
 namespace Tangle.ClickManager
 {

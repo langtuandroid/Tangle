@@ -21,7 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Laser
-  m_Shader: {fileID: -6465566751694194690, guid: b8e209f4ff4ac7d429eee1117cde5edc, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b8e209f4ff4ac7d429eee1117cde5edc,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -50,9 +51,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_b2ae68e338784337b99bdc9665cfbec0: 2
+    - Vector1_b2ae68e338784337b99bdc9665cfbec0: 13.5
     m_Colors:
-    - Color_9b86f8e1b98947f692ebd161fb82f952: {r: 0, g: 2.731139, b: 5.2164755, a: 1}
-    - Vector2_48da6910d2a14d629822e55c17af442c: {r: -1, g: 0, b: 0, a: 0}
-    - Vector2_4b58e89ca621426cae62b9f03e81b483: {r: 0.06, g: 1, b: 0, a: 0}
+    - Color_9b86f8e1b98947f692ebd161fb82f952: {r: 2.4434454, g: 2.4434454, b: 2.4434454,
+        a: 1}
+    - Vector2_48da6910d2a14d629822e55c17af442c: {r: -0.5, g: -0.5, b: 0, a: 0}
+    - Vector2_4b58e89ca621426cae62b9f03e81b483: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

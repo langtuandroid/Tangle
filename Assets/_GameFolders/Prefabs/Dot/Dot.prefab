@@ -146,7 +146,9 @@ MonoBehaviour:
     type: 2}
   _unsolvedImageContainer: {fileID: 11400000, guid: 28b5574f1382a4942982ecef76667749,
     type: 2}
+  _pairedLineDraver: {fileID: 0}
   triggerThreshold: 3
+  <IsRed>k__BackingField: 0
   _isMoving: 0
 --- !u!120 &2073491865665721771
 LineRenderer:
@@ -169,7 +171,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 10f90eee924daf147aacf8959fb247b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,13 +203,13 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.07522124
+        value: 0.32124352
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

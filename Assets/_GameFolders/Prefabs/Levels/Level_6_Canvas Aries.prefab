@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 5348048087842627280, guid: 57287f2234e26fd4198d183268b8bb65,
         type: 3}
       propertyPath: m_Name
-      value: Level_6_Canvas
+      value: Level_6_Canvas Aries
       objectReference: {fileID: 0}
     - target: {fileID: 5368580062174194393, guid: 57287f2234e26fd4198d183268b8bb65,
         type: 3}
@@ -401,12 +401,12 @@ PrefabInstance:
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -49
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 562
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
@@ -530,12 +530,12 @@ PrefabInstance:
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -541
+      value: -647
       objectReference: {fileID: 0}
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -206
+      value: -398
       objectReference: {fileID: 0}
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
@@ -659,12 +659,12 @@ PrefabInstance:
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 372
+      value: 266
       objectReference: {fileID: 0}
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 823
+      value: 631
       objectReference: {fileID: 0}
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
@@ -788,12 +788,12 @@ PrefabInstance:
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 733
+      value: 627
       objectReference: {fileID: 0}
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 801
+      value: 609
       objectReference: {fileID: 0}
     - target: {fileID: 7257824496005545464, guid: fbb4b8424889c4939864a4fd32b93b6e,
         type: 3}

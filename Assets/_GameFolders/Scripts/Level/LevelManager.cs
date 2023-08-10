@@ -13,7 +13,7 @@ namespace Tangle.Levels
         [SerializeField] LevelContainer _levelContainer;
         [SerializeField] GameEvent _levelCompleteEvent;
         [SerializeField] List<LineDrawerTest> _actieveLinesOnTheScene = new();
-        [SerializeField] NormalGameEventListener _nextLevelButtonListener;
+        [SerializeField] NormalGameEventListener _nextLevelButtonListener, _restartLevelButtonListener;
         GameObject _currentLevel;
         bool _isLevelComplete;
         public int CurrentLevel { get; private set; }
@@ -31,6 +31,7 @@ namespace Tangle.Levels
             Application.targetFrameRate = 60;
             InitializeLevelObject();
             _nextLevelButtonListener.NoParameterEvent += InitializeLevelObject;
+            _restartLevelButtonListener.NoParameterEvent += RestartLevel;
         }
 
 
@@ -82,6 +83,19 @@ namespace Tangle.Levels
             }
         }
 
+        void DestroyLevelOnRestart()
+        {
+            Destroy(_currentLevel);
+            _currentLevel = null;
+            CleanAllCacheLines();
+        }
+
+        void RestartLevel()
+        {
+            DestroyLevelOnRestart();
+            InitializeLevelObject();
+        }
+
         public void UpdateAllActieveLines(bool value)
         {
             foreach (var lineDrawerTest in _actieveLinesOnTheScene) lineDrawerTest.SetIsMoving(value);
@@ -123,6 +137,7 @@ namespace Tangle.Levels
         void OnDisable()
         {
             _nextLevelButtonListener.NoParameterEvent -= InitializeLevelObject;
+            _restartLevelButtonListener.NoParameterEvent -= RestartLevel;
         }
     }
 }

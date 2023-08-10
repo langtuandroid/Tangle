@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7349828247965049813}
   - component: {fileID: 1453768916867743619}
   - component: {fileID: 5283907874397659344}
+  - component: {fileID: 1809069772913042716}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
     type: 2}
   _actieveLinesOnTheScene: []
   _nextLevelButtonListener: {fileID: 5283907874397659344}
+  _restartLevelButtonListener: {fileID: 1809069772913042716}
 --- !u!114 &5283907874397659344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,3 +65,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvent: {fileID: 11400000, guid: 947c6ac3a3a138a4183581c65c743a8e, type: 2}
+--- !u!114 &1809069772913042716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277494036188377817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f845290b6d426aa6fa3b0e2d1f23f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: bcde00287a6733f4e8021d2857003a02, type: 2}

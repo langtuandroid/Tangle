@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Lofelt.NiceVibrations;
 using RoddGames.Abstracts.Patterns;
 using RoddGames.ScriptableObjects;
 using RoddGames.ScriptableObjects.GameEventListeners;
@@ -56,6 +57,7 @@ namespace Tangle.Levels
         void HandleOnLevelComplete()
         {
             Debug.Log("Level Complete");
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.Success);
             SetIsLevelComplete(true);
             CurrentLevel++;
             _levelCompleteEvent.InvokeEvents();

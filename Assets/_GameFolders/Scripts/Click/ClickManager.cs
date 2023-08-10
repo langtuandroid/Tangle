@@ -1,3 +1,4 @@
+using Lofelt.NiceVibrations;
 using RoddGames.Abstracts.Patterns;
 using Tangle.Line;
 using UnityEngine;
@@ -34,6 +35,7 @@ namespace Tangle.ClickManager
                 _firstLineTrigger = lineTriggerTest;
                 _firstLineTrigger.IsPingObject = true;
                 _firstLineTrigger.HandleOnSelect();
+                HapticPatterns.PlayPreset(HapticPatterns.PresetType.Selection);
                 //Debug.Log("First object pick");
             }
             else
@@ -49,6 +51,7 @@ namespace Tangle.ClickManager
 
         void ResetClickedObjects()
         {
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);
             CanClickAble = false;
             _firstLineTrigger.HandleOnDeselect();
             _secondLineTrigger.HandleOnDeselect();
@@ -59,12 +62,14 @@ namespace Tangle.ClickManager
         public void ResetFirstPick()
         {
             if (_firstLineTrigger == null) return;
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);
             _firstLineTrigger.HandleOnDeselect();
             _firstLineTrigger = null;
         }
 
         void SwapClickedObjectPositions()
         {
+            HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);
             _firstLineTrigger.StartMovement(_secondLineTrigger.gameObject.transform);
             _secondLineTrigger.StartMovement(_firstLineTrigger.gameObject.transform);
             ResetClickedObjects();

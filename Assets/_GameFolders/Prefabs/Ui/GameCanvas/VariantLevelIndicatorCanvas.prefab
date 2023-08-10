@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: LEVEL 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 26bf64b3433c6f241abb35dcfa7576f5, type: 2}
-  m_sharedMaterial: {fileID: -4572926109024754679, guid: 26bf64b3433c6f241abb35dcfa7576f5,
+  m_sharedMaterial: {fileID: -4355702368415504717, guid: 26bf64b3433c6f241abb35dcfa7576f5,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -162,7 +162,7 @@ RectTransform:
   m_GameObject: {fileID: 3928772026005953033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2460095500725125002}

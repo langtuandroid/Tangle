@@ -273,7 +273,9 @@ namespace Tangle.Line
 
         IEnumerator PingLevelManagerRoute()
         {
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.2f);
+            LevelManager.Instance.CheckAllImages();
+            yield return new WaitForSeconds(.3f);
             LevelManager.Instance.CheckLevelComplete();
         }
 
@@ -286,6 +288,12 @@ namespace Tangle.Line
         public void SetIsMoving(bool value)
         {
             _isMoving = value;
+        }
+
+        public void CheckImage()
+        {
+            if (!IsRed && !_pairedLineDraver.IsRed)
+                _dotImage.sprite = _randomImagePicker.PickRandomImage(true);
         }
     }
 }

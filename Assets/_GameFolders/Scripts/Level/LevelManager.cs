@@ -97,6 +97,11 @@ namespace Tangle.Levels
             UpdateAllLines();
         }
 
+        public void CheckAllImages()
+        {
+            foreach (var lineDrawerTest in _actieveLinesOnTheScene) lineDrawerTest.CheckImage();
+        }
+
         void CleanAllCacheLines()
         {
             _actieveLinesOnTheScene.Clear();

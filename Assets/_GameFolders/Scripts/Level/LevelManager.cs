@@ -56,10 +56,7 @@ namespace Tangle.Levels
         {
             Debug.Log("Level Complete");
             SetIsLevelComplete(true);
-            //Destroy(_currentLevel);
-            _currentLevel = null;
             CurrentLevel++;
-            //CleanAllCacheLines();
             _levelCompleteEvent.InvokeEvents();
         }
 

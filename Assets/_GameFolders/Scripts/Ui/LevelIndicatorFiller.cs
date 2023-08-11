@@ -26,7 +26,7 @@ namespace Tangle.Uis
         void UpdateLevelIndicatorText()
         {
             if (_levelManager == null) return;
-            _textMeshPro.text = "Level " + (_levelManager.CurrentLevel + 1).ToString();
+            _textMeshPro.text = "LEVEL " + (_levelManager.CurrentLevel + 1).ToString();
         }
 
         void OnValidate()

@@ -17,6 +17,7 @@ namespace Tangle.Line
         [SerializeField] LineDrawerTest _pairedLineDraver;
         RandomImagePicker _randomImagePicker;
         Tween _rotateTween, _scaleTween;
+        Tween _dotImageRotateTween, _dotImageScaleTween;
         public int triggerThreshold = 3; // Tetikleme için üst üste gelme eşiği
         int triggerCounter = 0; // Tetikleme için sayaç
         [field: SerializeField] public bool IsRed { get; private set; }
@@ -31,6 +32,11 @@ namespace Tangle.Line
         void Start()
         {
             SetDotImage();
+            _dotImageRotateTween = _dotImage.transform
+                .DORotate(new Vector3(0, 0, 360), Random.Range(8, 12), RotateMode.FastBeyond360)
+                .SetLoops(-1, LoopType.Restart)
+                .SetEase(Ease.Linear);
+            _dotImageScaleTween = _dotImage.transform.DOScale(new Vector3(1.6f, 1.6f, 1.6f), Random.Range(.5f, 1.5f)).SetLoops(-1, LoopType.Yoyo);
         }
 
         void Update()
@@ -283,6 +289,8 @@ namespace Tangle.Line
         {
             _rotateTween.Kill();
             _scaleTween.Kill();
+            _dotImageRotateTween.Kill();
+            _dotImageScaleTween.Kill();
         }
 
         public void SetIsMoving(bool value)

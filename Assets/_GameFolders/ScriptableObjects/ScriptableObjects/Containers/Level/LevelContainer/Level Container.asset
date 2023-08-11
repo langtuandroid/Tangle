@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Level Container
   m_EditorClassIdentifier: 
   _levelObjects:
-  - {fileID: 6825604626499792508, guid: 0d4b67fbdd81fb046b825c4e470007d9, type: 3}
   - {fileID: 6825604626499792508, guid: e539875d915b3e84399158650e20bc6d, type: 3}
   - {fileID: 6825604626499792508, guid: bda328d0c27ebb74b8bb1c614da71a47, type: 3}
   - {fileID: 6825604626499792508, guid: 1fcd163118caad24bb4b2076c8fd88f1, type: 3}
@@ -26,3 +25,5 @@ MonoBehaviour:
   - {fileID: 6825604626499792508, guid: 29a687721ec081c4e82720b4f1022fae, type: 3}
   - {fileID: 6825604626499792508, guid: 9166d1a127b222445be058d5a37d94a3, type: 3}
   - {fileID: 6825604626499792508, guid: 1b3942c5c7941af4997c98c7221f3b13, type: 3}
+  - {fileID: 6825604626499792508, guid: 0d4b67fbdd81fb046b825c4e470007d9, type: 3}
+  - {fileID: 6825604626499792508, guid: 8148f7ecbbb7e91429ee9c67f16b8530, type: 3}

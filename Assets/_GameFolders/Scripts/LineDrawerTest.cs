@@ -47,7 +47,7 @@ namespace Tangle.Line
             OpenLine();
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (_isMoving)
                 UpdateLine();

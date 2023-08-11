@@ -15,6 +15,8 @@ namespace Tangle.Line
         [SerializeField] Image _selectedDotImage, _selectedAnimationImage, _dotImage;
         [SerializeField] ImageContainer _solvedImageContainer, _unsolvedImageContainer;
         [SerializeField] LineDrawerTest _pairedLineDraver;
+        [SerializeField] Color _targetGreenColor, _targetRedColor;
+        [SerializeField] bool _isTesting;
         RandomImagePicker _randomImagePicker;
         Tween _rotateTween, _scaleTween;
         Tween _dotImageRotateTween, _dotImageScaleTween;
@@ -29,14 +31,20 @@ namespace Tangle.Line
             _randomImagePicker = new RandomImagePicker(_unsolvedImageContainer, _solvedImageContainer);
         }
 
-        void Start()
+        IEnumerator Start()
         {
+            if (_isTesting)
+                _selectedDotImage.SetNativeSize();
             SetDotImage();
             _dotImageRotateTween = _dotImage.transform
                 .DORotate(new Vector3(0, 0, 360), Random.Range(8, 12), RotateMode.FastBeyond360)
                 .SetLoops(-1, LoopType.Restart)
                 .SetEase(Ease.Linear);
             _dotImageScaleTween = _dotImage.transform.DOScale(new Vector3(1.6f, 1.6f, 1.6f), Random.Range(.5f, 1.5f)).SetLoops(-1, LoopType.Yoyo);
+            // _lineRenderer.startColor = _targetRedColor; // Line Renderer'ın başlangıç rengini kırmızı yap
+            // _lineRenderer.endColor = _targetRedColor;
+            yield return new WaitForSeconds(.2f);
+            OpenLine();
         }
 
         void Update()
@@ -166,8 +174,17 @@ namespace Tangle.Line
             if (triggerCounter >= triggerThreshold)
             {
                 IsRed = true;
-                _lineRenderer.startColor = Color.white; // Line Renderer'ın başlangıç rengini kırmızı yap
-                _lineRenderer.endColor = Color.white;
+                if (_isTesting)
+                {
+                    var newColor = new Color(_targetRedColor.r, _targetRedColor.g, _targetRedColor.b, 1f);
+                    _lineRenderer.startColor = newColor; // Line Renderer'ın başlangıç rengini kırmızı yap
+                    _lineRenderer.endColor = newColor;
+                }
+                else
+                {
+                    _lineRenderer.startColor = Color.white;
+                    _lineRenderer.endColor = Color.white;
+                }
             }
         }
 
@@ -179,15 +196,27 @@ namespace Tangle.Line
             if (triggerCounter < triggerThreshold)
             {
                 IsRed = false;
-                _lineRenderer.startColor = Color.green; // Line Renderer'ın başlangıç rengini kırmızı yap
-                _lineRenderer.endColor = Color.green;
-                //SetDotImage(true);
+                if (_isTesting)
+                {
+                    var newColor = new Color(_targetGreenColor.r, _targetGreenColor.g, _targetGreenColor.b, 1f);
+                    _lineRenderer.startColor = newColor;
+                    ; // Line Renderer'ın başlangıç rengini kırmızı yap
+                    _lineRenderer.endColor = newColor;
+                    //SetDotImage(true);    
+                }
+                else
+                {
+                    _lineRenderer.startColor = Color.green;
+                    _lineRenderer.endColor = Color.green;
+                }
             }
         }
 
         void SetDotImage()
         {
             _dotImage.sprite = _randomImagePicker.PickRandomImage(false);
+            if (_isTesting)
+                _dotImage.SetNativeSize();
         }
 
         public void ClickEvent()

@@ -15,6 +15,7 @@ namespace Tangle.Levels
         [SerializeField] GameEvent _levelCompleteEvent;
         [SerializeField] List<LineDrawerTest> _actieveLinesOnTheScene = new();
         [SerializeField] NormalGameEventListener _nextLevelButtonListener, _restartLevelButtonListener;
+        [SerializeField] bool _isCpi;
         GameObject _currentLevel;
         bool _isLevelComplete;
         public int CurrentLevel { get; private set; }
@@ -38,6 +39,7 @@ namespace Tangle.Levels
 
         public void CheckLevelComplete()
         {
+            if (_isCpi) return;
             if (_isLevelComplete) return;
             foreach (var lineDrawer in _actieveLinesOnTheScene)
                 if (lineDrawer.IsRed)

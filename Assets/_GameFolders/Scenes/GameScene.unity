@@ -726,17 +726,17 @@ PrefabInstance:
     - target: {fileID: 361061933314538160, guid: 5723fa34f6feedc4691ccaac9f13bc7b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3242338082079989357, guid: 5723fa34f6feedc4691ccaac9f13bc7b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5539856590825867850, guid: 5723fa34f6feedc4691ccaac9f13bc7b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8908824518897191867, guid: 5723fa34f6feedc4691ccaac9f13bc7b,
         type: 3}
@@ -843,6 +843,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5723fa34f6feedc4691ccaac9f13bc7b, type: 3}
+--- !u!1 &2061319072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061319074}
+  - component: {fileID: 2061319073}
+  m_Layer: 0
+  m_Name: CpiLineRendererWidthAnimator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2061319073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061319072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fe3d886be05fd45b8818a2b4f4f10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetWidth: 0.1
+  tweenDuration: 0.5
+  _linesOnScene: []
+--- !u!4 &2061319074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061319072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1845362858677974040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -956,6 +1003,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VariantLevelIndicatorCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5594383654438041393, guid: c9b631c3f7228443793947f70528b07b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7807882256257144152, guid: c9b631c3f7228443793947f70528b07b,
         type: 3}
       propertyPath: _levelManager
@@ -980,6 +1032,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1453768916867743619, guid: b78290329dec5524985dcf6b2a2dfc43,
+        type: 3}
+      propertyPath: _isCpi
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7277494036188377817, guid: b78290329dec5524985dcf6b2a2dfc43,
         type: 3}
       propertyPath: m_Name
@@ -1226,6 +1283,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VariantSettingsButtonCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8492675557294013227, guid: 8cecc237e12af4ed7b9423c1c437240a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1249,6 +1311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VariantBackButtonCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163780167211285165, guid: c80b812f34ca34b10844de06628e8d78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6145229947368983462, guid: c80b812f34ca34b10844de06628e8d78,
         type: 3}
@@ -1372,3 +1439,4 @@ SceneRoots:
   - {fileID: 1281926170}
   - {fileID: 1006432444}
   - {fileID: 2526987289211963333}
+  - {fileID: 2061319074}

@@ -45,6 +45,7 @@ namespace Tangle.Line
             // _lineRenderer.endColor = _targetRedColor;
             yield return new WaitForSeconds(.2f);
             OpenLine();
+            SetDotImage();
         }
 
         void FixedUpdate()

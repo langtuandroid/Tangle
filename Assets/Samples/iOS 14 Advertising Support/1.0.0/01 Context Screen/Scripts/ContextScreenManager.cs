@@ -1,7 +1,12 @@
 ﻿using System.Collections;
+using GameAnalyticsSDK;
 using Unity.Advertisement.IosSupport.Components;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+#if UNITY_IOS
+using UnityEngine.iOS;
+#endif
 
 namespace Unity.Advertisement.IosSupport.Samples
 {
@@ -19,7 +24,7 @@ namespace Unity.Advertisement.IosSupport.Samples
 
         void Start()
         {
-#if UNITY_IOS
+#if UNITY_IOS && !UNITY_EDITOR
             // check with iOS to see if the user has accepted or declined tracking
             var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
 
@@ -32,24 +37,74 @@ namespace Unity.Advertisement.IosSupport.Samples
                 contextScreen.sentTrackingAuthorizationRequest += () => Destroy(contextScreen.gameObject);
             }
 #else
-            Debug.Log("Unity iOS Support: App Tracking Transparency status not checked, because the platform is not iOS.");
+            Debug.Log(
+                "Unity iOS Support: App Tracking Transparency status not checked, because the platform is not iOS.");
 #endif
-            StartCoroutine(LoadNextScene());
+
+            StartCoroutine(CanStartSceneProcessAsync());
         }
 
-        IEnumerator LoadNextScene()
+        IEnumerator CanStartSceneProcessAsync()
         {
-#if UNITY_IOS
+#if UNITY_IOS && !UNITY_EDITOR
             var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
-
+            
             while (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
             {
                 status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
                 yield return null;
             }
+            
+            GameAnalyticsIosPermissionRequest gameAnalyticsIosPermissionRequest =
+                        new GameAnalyticsIosPermissionRequest();
+
+            switch (status)
+            {
+                case ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED:
+                    gameAnalyticsIosPermissionRequest.GameAnalyticsATTListenerNotDetermined();
+                    break;
+                case ATTrackingStatusBinding.AuthorizationTrackingStatus.AUTHORIZED:
+                    gameAnalyticsIosPermissionRequest.GameAnalyticsATTListenerAuthorized();
+                    break;
+                case ATTrackingStatusBinding.AuthorizationTrackingStatus.RESTRICTED:
+                    gameAnalyticsIosPermissionRequest.GameAnalyticsATTListenerRestricted();
+                    break;
+                case ATTrackingStatusBinding.AuthorizationTrackingStatus.DENIED:
+                    gameAnalyticsIosPermissionRequest.GameAnalyticsATTListenerDenied();
+                    break;
+            }
 #endif
-            SceneManager.LoadScene(1);
+
             yield return null;
+            SceneManager.LoadScene(1);
+        }
+    }
+
+    public class GameAnalyticsIosPermissionRequest : IGameAnalyticsATTListener
+    {
+        public GameAnalyticsIosPermissionRequest()
+        {
+            GameAnalytics.RequestTrackingAuthorization(this);
+        }
+
+        public void GameAnalyticsATTListenerNotDetermined()
+        {
+            GameAnalytics.Initialize();
+        }
+
+        public void GameAnalyticsATTListenerRestricted()
+        {
+            GameAnalytics.Initialize();
+        }
+
+        public void GameAnalyticsATTListenerDenied()
+        {
+            GameAnalytics.Initialize();
+        }
+
+        public void GameAnalyticsATTListenerAuthorized()
+        {
+            GameAnalytics.Initialize();
         }
     }
 }

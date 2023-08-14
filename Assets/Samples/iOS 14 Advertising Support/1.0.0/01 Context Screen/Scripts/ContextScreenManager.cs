@@ -1,5 +1,7 @@
-﻿using Unity.Advertisement.IosSupport.Components;
+﻿using System.Collections;
+using Unity.Advertisement.IosSupport.Components;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Unity.Advertisement.IosSupport.Samples
 {
@@ -32,6 +34,22 @@ namespace Unity.Advertisement.IosSupport.Samples
 #else
             Debug.Log("Unity iOS Support: App Tracking Transparency status not checked, because the platform is not iOS.");
 #endif
+            StartCoroutine(LoadNextScene());
         }
-    }   
+
+        IEnumerator LoadNextScene()
+        {
+#if UNITY_IOS
+            var status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
+
+            while (status == ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
+            {
+                status = ATTrackingStatusBinding.GetAuthorizationTrackingStatus();
+                yield return null;
+            }
+#endif
+            SceneManager.LoadScene(1);
+            yield return null;
+        }
+    }
 }

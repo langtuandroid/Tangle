@@ -17,6 +17,8 @@ namespace Tangle.Line
         [SerializeField] LineDrawerTest _pairedLineDraver;
         [SerializeField] Color _targetGreenColor, _targetRedColor;
         [SerializeField] bool _isTesting;
+        [SerializeField] Transform _drawTarget;
+        [SerializeField] bool _isCpi;
         RandomImagePicker _randomImagePicker;
         Tween _rotateTween, _scaleTween;
         Tween _dotImageRotateTween, _dotImageScaleTween;
@@ -128,6 +130,16 @@ namespace Tangle.Line
 
         void DrawToNext()
         {
+            if (_isCpi)
+            {
+                Vector3[] positions = { transform.position, _drawTarget.position };
+                _lineRenderer.positionCount = 2;
+                _lineRenderer.SetPositions(positions);
+                var linedrawer = _drawTarget.GetComponent<LineDrawerTest>();
+                linedrawer._pairedLineDraver = this;
+                return;
+            }
+
             if (IsLastObject())
             {
                 var firstLineDrawer = FindFirstLineDrawer();
@@ -171,6 +183,7 @@ namespace Tangle.Line
         void OnTriggerEnter2D(Collider2D other)
         {
             triggerCounter++;
+            //Debug.Log(transform.parent.name + " " + triggerCounter + " enter");
             SetDotImage();
             if (triggerCounter >= triggerThreshold)
             {
@@ -192,6 +205,7 @@ namespace Tangle.Line
         void OnTriggerExit2D(Collider2D other)
         {
             triggerCounter--;
+            Debug.Log(transform.parent.name + " " + triggerCounter + " exit");
             SetDotImage();
             triggerCounter = Mathf.Max(triggerCounter, 0);
             if (triggerCounter < triggerThreshold)
@@ -330,6 +344,13 @@ namespace Tangle.Line
 
         public void CheckImage()
         {
+            if (_pairedLineDraver == null)
+                if (!IsRed)
+                {
+                    _dotImage.sprite = _randomImagePicker.PickRandomImage(true);
+                    return;
+                }
+
             if (!IsRed && !_pairedLineDraver.IsRed)
                 _dotImage.sprite = _randomImagePicker.PickRandomImage(true);
         }

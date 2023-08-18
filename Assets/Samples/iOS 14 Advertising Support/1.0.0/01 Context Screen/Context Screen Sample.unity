@@ -377,6 +377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VariantSplashScreen - ATT
       objectReference: {fileID: 0}
+    - target: {fileID: 361061933314538160, guid: 101cff400a4e64ca7b2b3a57b01efa11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8908824518897191867, guid: 101cff400a4e64ca7b2b3a57b01efa11,
         type: 3}
       propertyPath: m_Pivot.x

@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29803177-d280-4d24-af6f-f7c0be031c91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-common-15.2.0.aar" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-common-15.2.0.aar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-core-15.2.0.aar" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-core-15.2.0.aar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-applinks-15.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-applinks-15.2.0.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-bolts-15.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-bolts-15.2.0.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-common-15.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-common-15.2.0.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-core-15.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-core-15.2.0.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-gamingservices-15.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-gamingservices-15.2.0.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-login-15.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-login-15.2.0.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-share-15.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-share-15.2.0.aar.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +113,7 @@
       <workItem from="1691494915971" duration="7647000" />
       <workItem from="1692003185060" duration="844000" />
       <workItem from="1692341077064" duration="1002000" />
+      <workItem from="1692530476495" duration="360000" />
     </task>
     <servers />
   </component>

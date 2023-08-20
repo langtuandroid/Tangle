@@ -27,20 +27,26 @@ MonoBehaviour:
   CustomArea: 
   gameKey:
   - 0566cbb874fd62ed7b832c56aa779664
+  - d68db535f6309b043c36ad390b8d041d
   secretKey:
   - 2c0c0e3d583dd76e37dda83a9dfaa5a2929dae5e
+  - 68b728eb44157f357e2c8d4b94d47acc4927a17c
   Build:
-  - 0.0.1
+  - 1.0.5
+  - 1.0.5
   SelectedPlatformOrganization:
+  - Rodd Games
   - Rodd Games
   SelectedPlatformStudio:
   - Rodd Games - Self Publish
+  - Rodd Games - Self Publish
   SelectedPlatformGame:
   - Tangled Lines 2D - Ios
-  SelectedPlatformGameID: 60f10300
-  SelectedOrganization: 01000000
-  SelectedStudio: 01000000
-  SelectedGame: 09000000
+  - Tangled Lines 2D - Android
+  SelectedPlatformGameID: 60f103008ef30300
+  SelectedOrganization: 0100000001000000
+  SelectedStudio: 0100000001000000
+  SelectedGame: 090000000c000000
   NewVersion: 
   Changes: 
   SignUpOpen: 0
@@ -62,7 +68,7 @@ MonoBehaviour:
   ResourceItemTypes: []
   ResourceCurrencies: []
   LastCreatedGamePlatform: 0
-  Platforms: 08000000
+  Platforms: 080000000b000000
   CurrentInspectorState: 1
   ClosedHints: 
   DisplayHints: 0
@@ -90,7 +96,7 @@ MonoBehaviour:
   IncludeGooglePlay: 1
   FpsCriticalThreshold: 20
   FpsCirticalSubmitInterval: 1
-  PlatformFoldOut: 01
+  PlatformFoldOut: 0101
   CustomDimensions01FoldOut: 0
   CustomDimensions02FoldOut: 0
   CustomDimensions03FoldOut: 0
